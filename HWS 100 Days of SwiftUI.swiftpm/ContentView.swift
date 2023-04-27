@@ -7,9 +7,25 @@ struct ContentView: View {
     @State private var tempCelcius: Double
     @State private var entryCount: Int = 0
     @State private var tempOccurrences = Set<String>()
-        
+    @State private var isFahrenheit = true
+    @State private var currentDay = ""
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     init(tempCelcius: Double) {
         self.tempCelcius = tempCelcius
+    }
+    
+    private func fireTimer() {
+        let day = Calendar.current.component(.weekday, from: Date())
+        
+        switch (day) {
+        case DayOfWeek.Sunday.rawValue:
+            currentDay = "Start of the week"
+        case DayOfWeek.Thursday.rawValue:
+            currentDay = "Thursday :)"
+        default:
+            currentDay = "Day"
+        }
     }
     
     private func convertToFahrenheit(celciusVal: Double) -> Double {
@@ -22,8 +38,12 @@ struct ContentView: View {
     }
     
     private func getDisplayTemperature() -> String {
-        let valueToDisplay = convertToFahrenheit(celciusVal: tempCelcius)
-        return String(format: temperatureFormat, valueToDisplay)
+        if (isFahrenheit) {
+            let valueToDisplay = convertToFahrenheit(celciusVal: tempCelcius)
+            return String(format: temperatureFormat, valueToDisplay)
+        }
+        
+        return String(format: temperatureFormat, tempCelcius)
     }
     
     private func incrementTemp() {
@@ -43,8 +63,23 @@ struct ContentView: View {
             Image(systemName: "thermometer.sun")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
+            Text("\(getDisplayTemperature())°\(isFahrenheit ? "F" : "C")")
             
-            Text(getDisplayTemperature())
+            Text("\(currentDay)")
+                .onReceive(timer) { _ in
+                    let day = Calendar.current.component(.weekday, from: Date())
+                    
+                    switch (day) {
+                    case DayOfWeek.Sunday.rawValue:
+                        currentDay = "Start of the week"
+                    case DayOfWeek.Thursday.rawValue:
+                        currentDay = "Thursday :)"
+                    default:
+                        currentDay = "Day \(day)"
+                    }
+                }
+            
+            Toggle("Convert to Fahrenheit", isOn: $isFahrenheit)
             
             HStack {
                 Button("Increment") {
@@ -58,7 +93,7 @@ struct ContentView: View {
             .padding(.top)
             
             VStack {
-                Text("Has 95.0 occurred?")
+                Text("Has 95.0°F occurred?")
                 Text("\(tempOccurrences.contains("95.0") ? "Yes" : "No")")
                     .font(.callout)
             }.padding(.top)
@@ -66,7 +101,7 @@ struct ContentView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     ForEach(history.sorted(by: >), id: \.key) { key, value in
-                        Text("Entry #\(key): \(value)")
+                        Text("Entry #\(key): \(value)°F")
                     }
                     .padding(.top)
                 }
