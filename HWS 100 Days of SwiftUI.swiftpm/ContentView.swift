@@ -6,6 +6,7 @@ struct ContentView: View {
     @State private var history = [Int: String]()
     @State private var tempCelcius: Double
     @State private var entryCount: Int = 0
+    @State private var tempOccurrences = Set<String>()
         
     init(tempCelcius: Double) {
         self.tempCelcius = tempCelcius
@@ -34,6 +35,7 @@ struct ContentView: View {
         entryCount += 1
         let val: String = getDisplayTemperature()
         history[entryCount] = val
+        tempOccurrences.insert(val)
     }
   
     var body: some View {
@@ -55,10 +57,20 @@ struct ContentView: View {
             }
             .padding(.top)
             
-            ForEach(history.sorted(by: >), id: \.key) { key, value in
-                Text("Entry #\(key): \(value)")
+            VStack {
+                Text("Has 95.0 occurred?")
+                Text("\(tempOccurrences.contains("95.0") ? "Yes" : "No")")
+                    .font(.callout)
+            }.padding(.top)
+            
+            ScrollView {
+                VStack(alignment: .leading) {
+                    ForEach(history.sorted(by: >), id: \.key) { key, value in
+                        Text("Entry #\(key): \(value)")
+                    }
+                    .padding(.top)
+                }
             }
-            .padding(.top)
         }
     }
 }
