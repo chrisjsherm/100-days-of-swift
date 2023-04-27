@@ -3,8 +3,9 @@ import SwiftUI
 struct ContentView: View {
     let temperatureFormat = "%.1f"
     
-    @State private var history = [String]()
+    @State private var history = [Int: String]()
     @State private var tempCelcius: Double
+    @State private var entryCount: Int = 0
         
     init(tempCelcius: Double) {
         self.tempCelcius = tempCelcius
@@ -30,7 +31,9 @@ struct ContentView: View {
     }
     
     private func logTemperature() {
-        history.append(getDisplayTemperature())
+        entryCount += 1
+        let val: String = getDisplayTemperature()
+        history[entryCount] = val
     }
   
     var body: some View {
@@ -51,10 +54,11 @@ struct ContentView: View {
                 }
             }
             .padding(.top)
-        }
-        
-        List(history, id: \.self) { val in
-            Text(val)
+            
+            ForEach(history.sorted(by: >), id: \.key) { key, value in
+                Text("Entry #\(key): \(value)")
+            }
+            .padding(.top)
         }
     }
 }
