@@ -96,6 +96,11 @@ struct ContentView: View {
                 Text("Has 95.0°F occurred?")
                 Text("\(tempOccurrences.contains("95.0") ? "Yes" : "No")")
                     .font(.callout)
+                
+                Spacer()
+                
+                Text("\(tempOccurrences.count) unique temperature occurrences")
+                Text("\(history.count) temperatures logged")
             }.padding(.top)
             
             ScrollView {
