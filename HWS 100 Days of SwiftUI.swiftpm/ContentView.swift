@@ -4,17 +4,15 @@ struct ContentView: View {
     private var messages: [String]
     
     init() {
-        self.messages = [String]()
-        for i in 1...100 {
-            if i % 15 == 0 {
-                messages.append("FizzBuzz")
-            } else if i % 3 == 0 {
-                messages.append("Fizz")
-            } else if i % 5 == 0 {
-                messages.append("Buzz")
-            } else {
-                messages.append(String(i))
-            }
+        messages = []
+        
+        printTimesTables(for: 5)
+    }
+    
+    mutating func printTimesTables(for number: Int) {
+        for i in 1...12 {
+            let msg = "\(i) x \(number) is \(i * number)"
+            messages.append(msg)
         }
     }
    
