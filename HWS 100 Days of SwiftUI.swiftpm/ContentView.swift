@@ -19,8 +19,8 @@ struct ContentView: View {
         employees.append((fullName: "\(firstName) \(lastName)", number: employeeCount))
     }
     
-    mutating func printTimesTables(for number: Int) {
-        for i in 1...12 {
+    mutating func printTimesTables(for number: Int, end: Int = 10) {
+        for i in 1...end {
             let msg = "\(i) x \(number) is \(i * number)"
             messages.append(msg)
         }
