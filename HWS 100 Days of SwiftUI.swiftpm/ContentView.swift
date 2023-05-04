@@ -11,10 +11,29 @@ struct ContentView: View {
         messages = []
         
         printTimesTables(for: 5)
-        addEmployee(firstName: "Tom", lastName: "Clancy")
+        
+        do {
+            try addEmployee(firstName: "Tom", lastName: "Clancy")
+        } catch {
+            print("An error occurred adding the employee")
+        }
+        
     }
     
-    mutating func addEmployee(firstName: String, lastName: String) {
+    mutating func addEmployee(firstName: String, lastName: String) throws {
+        if (firstName == "" && lastName == "") {
+            throw EmployeeError.emptyNames
+        }
+        
+        if (firstName == "") {
+            throw EmployeeError.emptyFirstName
+        }
+        
+        if (lastName == "") {
+            throw EmployeeError.emptyLastName
+        }
+        
+        
         employeeCount += 1
         employees.append((fullName: "\(firstName) \(lastName)", number: employeeCount))
     }
