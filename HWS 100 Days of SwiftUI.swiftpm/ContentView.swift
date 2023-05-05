@@ -6,17 +6,11 @@ struct ContentView: View {
     init() {
         self.logEntry = [String]()
     }
-    
-    func logTimestamp() -> Void {
-        let timestamp = String(Date().currentTimeMillis())
-        print(timestamp)
-        logEntry.append(timestamp)
-    }
    
     var body: some View {
         VStack{
             Button("Log current timestamp") {
-                logTimestamp()
+                { logEntry.append(String(Date().currentTimeMillis())) }()
             }
         }
         
