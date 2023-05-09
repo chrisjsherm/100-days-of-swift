@@ -1,40 +1,42 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var username: String = ""
-    @State var currentUser: User?
+    @State var car: Car
+    @State var errorMessage: String = ""
     
-    func createUser(name: String) {
-        currentUser = User(username: name)
+    init(car: Car) {
+        self.car = car
     }
    
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Create user")
-            TextField("Enter a username", text: $username)
-            
-            Button("Create", action: {
-                createUser(name: username)
-            })
-        }
-        .padding(.all)
-        
-        Spacer()
-        
-        VStack(alignment: .leading) {
-            if currentUser != nil {
-                Text("Current user's name is \(currentUser!.username)")
-                Text("Last login at \(currentUser!.lastLoginPrettyPrint)")
-                    .padding(.bottom)
+        HStack {
+            Button("Shift up") {
+                do {
+                    let _ = try car.shiftUp()
+                    errorMessage = ""
+                } catch GearShiftError.runtimeError(let errorDescription) {
+                    errorMessage = errorDescription
+                } catch {
+                    errorMessage = "An unknown error occurred"
+                }
                 
-                Button("Login", action: {
-                    currentUser?.login()
-                })
-            } else {
-                Text("Create a user to get started")
+            }
+            
+            Button("Shift down") {
+                do {
+                    let _ = try car.shiftDown()
+                    errorMessage = ""
+                } catch GearShiftError.runtimeError(let errorDescription) {
+                    errorMessage = errorDescription
+                } catch {
+                    errorMessage = "An unknown error occurred"
+                }
             }
         }
         
-        Spacer()
+        VStack {
+            Text("Current gear \(car.currentGear)")
+            Text(errorMessage)
+        }
     }
 }
