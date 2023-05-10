@@ -1,42 +1,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var car: Car
-    @State var errorMessage: String = ""
+    let cat: Cat
+    let dog: Dog
+    let lion: Lion
+    let persian: Persian
+    let corgi: Corgi
+    let poodle: Poodle
     
-    init(car: Car) {
-        self.car = car
+    init() {
+        self.cat = Cat(legs: 4, isTame: false)
+        self.dog = Dog(legs: 4)
+        self.lion = Lion(legs: 4, isTame: false)
+        self.persian = Persian(legs: 4, isTame: true)
+        self.corgi = Corgi(legs: 4)
+        self.poodle = Poodle(legs: 4)
     }
-   
+    
     var body: some View {
-        HStack {
-            Button("Shift up") {
-                do {
-                    let _ = try car.shiftUp()
-                    errorMessage = ""
-                } catch GearShiftError.runtimeError(let errorDescription) {
-                    errorMessage = errorDescription
-                } catch {
-                    errorMessage = "An unknown error occurred"
-                }
-                
-            }
-            
-            Button("Shift down") {
-                do {
-                    let _ = try car.shiftDown()
-                    errorMessage = ""
-                } catch GearShiftError.runtimeError(let errorDescription) {
-                    errorMessage = errorDescription
-                } catch {
-                    errorMessage = "An unknown error occurred"
-                }
-            }
-        }
-        
-        VStack {
-            Text("Current gear \(car.currentGear)")
-            Text(errorMessage)
+        VStack{
+            Text("Cat speak: \(cat.speak())")
+            Text("Dog speak: \(dog.speak())")
+            Text("Lion speak: \(lion.speak())")
+            Text("Persian speak: \(persian.speak())")
+            Text("Corgi speak: \(corgi.speak())")
+            Text("Poodle speak: \(poodle.speak())")
         }
     }
 }
