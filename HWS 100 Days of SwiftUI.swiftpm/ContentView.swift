@@ -1,30 +1,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    let cat: Cat
-    let dog: Dog
-    let lion: Lion
-    let persian: Persian
-    let corgi: Corgi
-    let poodle: Poodle
+    let building1: Building
+    let building2: Building
     
     init() {
-        self.cat = Cat(legs: 4, isTame: false)
-        self.dog = Dog(legs: 4)
-        self.lion = Lion(legs: 4, isTame: false)
-        self.persian = Persian(legs: 4, isTame: true)
-        self.corgi = Corgi(legs: 4)
-        self.poodle = Poodle(legs: 4)
+        building1 = House(rooms: 3, cost: 250000, agentName: "Bill")
+        building2 = Office(rooms: 50, cost: 1000000, agentName: "Lucy")
     }
     
     var body: some View {
         VStack{
-            Text("Cat speak: \(cat.speak())")
-            Text("Dog speak: \(dog.speak())")
-            Text("Lion speak: \(lion.speak())")
-            Text("Persian speak: \(persian.speak())")
-            Text("Corgi speak: \(corgi.speak())")
-            Text("Poodle speak: \(poodle.speak())")
+            Text("Building 1 summary: \(building1.printSalesSummary())")
+            Text("Building 2 summary: \(building2.printSalesSummary())")
         }
     }
 }
