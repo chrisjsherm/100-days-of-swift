@@ -15,21 +15,22 @@ protocol Building {
     func printSalesSummary() -> String
 }
 
+extension Building {
+    func printSalesSummary() -> String {
+        return """
+               This building has \(rooms) rooms and
+               costs $\(cost). To schedule a visit, contact
+               \(agentName).
+               """
+    }
+}
+
 struct House: Building {
     var rooms: Int
     
     var cost: Int
     
     var agentName: String
-    
-    
-    func printSalesSummary() -> String {
-        return """
-               This house has \(rooms) rooms and
-               costs $\(cost). To schedule a visit, contact
-               \(agentName).
-               """
-    }
 }
 
 struct Office: Building {
