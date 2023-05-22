@@ -2,13 +2,29 @@ import SwiftUI
 
 struct ContentView: View {
     
-    init() {
-        
-        func hello(arr: [Int]?) -> Int { return arr?[Int.random(in: 0..<(arr!.count))] ?? Int.random(in: 1...100)}
-        print(hello(arr: nil))
-    }
-    
     var body: some View {
-        Text("Checkpoint 9")
+        VStack {
+            HStack {
+                Text("Cell 0")
+                Text("Cell 1")
+                Text("Cell 2")
+            }
+        }
+        
+        VStack {
+            HStack {
+                Text("Cell 3")
+                Text("Cell 4")
+                Text("Cell 5")
+            }
+        }
+        
+        VStack {
+            HStack {
+                Text("Cell 6")
+                Text("Cell 7")
+                Text("Cell 8")
+            }
+        }
     }
 }
