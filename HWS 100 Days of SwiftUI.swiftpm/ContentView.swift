@@ -1,30 +1,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingAlert = false
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Cell 0")
-                Text("Cell 1")
-                Text("Cell 2")
-            }
-        }
+        AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)
         
-        VStack {
-            HStack {
-                Text("Cell 3")
-                Text("Cell 4")
-                Text("Cell 5")
-            }
+        Button("Show Alert") {
+            showingAlert = true
         }
-        
-        VStack {
-            HStack {
-                Text("Cell 6")
-                Text("Cell 7")
-                Text("Cell 8")
-            }
+        .alert("Important message", isPresented: $showingAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text("Please read this.")
         }
     }
 }
