@@ -12,6 +12,7 @@
 		AA82433D2A1F94A40092947E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA82433C2A1F94A40092947E /* Assets.xcassets */; };
 		AA8243402A1F94A40092947E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA82433F2A1F94A40092947E /* Preview Assets.xcassets */; };
 		AA8243472A1F99A00092947E /* CapsuleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8243462A1F99A00092947E /* CapsuleText.swift */; };
+		AA8243492A1F9AB00092947E /* Watermark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8243482A1F9AB00092947E /* Watermark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		AA82433C2A1F94A40092947E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA82433F2A1F94A40092947E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA8243462A1F99A00092947E /* CapsuleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleText.swift; sourceTree = "<group>"; };
+		AA8243482A1F9AB00092947E /* Watermark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watermark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 		AA82432C2A1F94A20092947E = {
 			isa = PBXGroup;
 			children = (
+				AA8243482A1F9AB00092947E /* Watermark.swift */,
 				AA8243372A1F94A20092947E /* Views and Modifiers */,
 				AA8243362A1F94A20092947E /* Products */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8243492A1F9AB00092947E /* Watermark.swift in Sources */,
 				AA82433B2A1F94A20092947E /* ContentView.swift in Sources */,
 				AA8243392A1F94A20092947E /* Views_and_ModifiersApp.swift in Sources */,
 				AA8243472A1F99A00092947E /* CapsuleText.swift in Sources */,
