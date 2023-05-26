@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA76234B2A20E698009B6A22 /* ImBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76234A2A20E698009B6A22 /* ImBlue.swift */; };
 		AA8243392A1F94A20092947E /* Views_and_ModifiersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8243382A1F94A20092947E /* Views_and_ModifiersApp.swift */; };
 		AA82433B2A1F94A20092947E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA82433A2A1F94A20092947E /* ContentView.swift */; };
 		AA82433D2A1F94A40092947E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA82433C2A1F94A40092947E /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA76234A2A20E698009B6A22 /* ImBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImBlue.swift; sourceTree = "<group>"; };
 		AA8243352A1F94A20092947E /* Views and Modifiers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Views and Modifiers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8243382A1F94A20092947E /* Views_and_ModifiersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views_and_ModifiersApp.swift; sourceTree = "<group>"; };
 		AA82433A2A1F94A20092947E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +41,7 @@
 		AA82432C2A1F94A20092947E = {
 			isa = PBXGroup;
 			children = (
+				AA76234A2A20E698009B6A22 /* ImBlue.swift */,
 				AA8243482A1F9AB00092947E /* Watermark.swift */,
 				AA8243372A1F94A20092947E /* Views and Modifiers */,
 				AA8243362A1F94A20092947E /* Products */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA8243492A1F9AB00092947E /* Watermark.swift in Sources */,
+				AA76234B2A20E698009B6A22 /* ImBlue.swift in Sources */,
 				AA82433B2A1F94A20092947E /* ContentView.swift in Sources */,
 				AA8243392A1F94A20092947E /* Views_and_ModifiersApp.swift in Sources */,
 				AA8243472A1F99A00092947E /* CapsuleText.swift in Sources */,

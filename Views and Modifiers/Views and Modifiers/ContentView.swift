@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Color.blue
-            .frame(width: 300, height: 200)
-            .watermarked(with: "Hacking with Swift")
+        VStack {
+            Text("I'm blue daba-dee daba-dye")
+                .modifier(ImBlue())
+            Color.blue
+                .frame(width: 300, height: 200)
+                .watermarked(with: "Hacking with Swift")
+        }
     }
 }
 
