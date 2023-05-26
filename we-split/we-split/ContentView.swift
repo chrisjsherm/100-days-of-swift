@@ -51,6 +51,7 @@ struct ContentView: View {
                 
                 Section(header: Text("Total bill")) {
                     Text(totalPerPerson * Double(numberOfPeopleIdx + 2), format: currencyFormat)
+                        .foregroundColor(tipPercentage == 0 ? .red : .black)
                 }
             }
             .navigationTitle("WeSplit")
