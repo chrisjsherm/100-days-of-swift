@@ -11,6 +11,7 @@
 		AAA2251B2A2787B100911226 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA2251A2A2787B100911226 /* ContentView.swift */; };
 		AAA2251D2A2787B300911226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA2251C2A2787B300911226 /* Assets.xcassets */; };
 		AAA225202A2787B300911226 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA2251F2A2787B300911226 /* Preview Assets.xcassets */; };
+		AAE17E1C2A28CF4400537086 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AAE17E1B2A28CF4400537086 /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AAA2251A2A2787B100911226 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AAA2251C2A2787B300911226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAA2251F2A2787B300911226 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AAE17E1B2A28CF4400537086 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SleepCalculator.mlmodel; path = "better-rest/SleepCalculator.mlmodel"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				AAA225182A2787B100911226 /* better_restApp.swift */,
 				AAA2251A2A2787B100911226 /* ContentView.swift */,
 				AAA2251C2A2787B300911226 /* Assets.xcassets */,
+				AAE17E1B2A28CF4400537086 /* SleepCalculator.mlmodel */,
 				AAA2251E2A2787B300911226 /* Preview Content */,
 			);
 			path = "better-rest";
@@ -139,6 +142,7 @@
 			files = (
 				AAA2251B2A2787B100911226 /* ContentView.swift in Sources */,
 				AAA225192A2787B100911226 /* better_restApp.swift in Sources */,
+				AAE17E1C2A28CF4400537086 /* SleepCalculator.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
