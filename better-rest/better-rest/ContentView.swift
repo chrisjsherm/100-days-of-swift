@@ -65,7 +65,13 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Daily coffee intake")) {
-                    Stepper(coffeeAmount == 1 ? "1 cup": "\(coffeeAmount) cups", value: $coffeeAmount, in: 1...20)
+                    Picker("Daily coffee intake", selection: $coffeeAmount) {
+                        ForEach(1...20, id: \.self) {
+                            Text("\($0)")
+                        }
+                    }
+                    .labelsHidden()
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 }
             }
             .navigationTitle("Better Rest")
