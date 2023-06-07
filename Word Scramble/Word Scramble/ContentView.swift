@@ -10,23 +10,14 @@ import SwiftUI
 struct ContentView: View {
     @State private var presentWords: Array<String> = []
     @State private var usedWords: Set<String> = []
-    @State private var rootWord: String
+    @State private var rootWord = ""
     @State private var newWord = ""
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
     @State private var freq = [Character: Int]()
-    
-    init() {
-        _rootWord = State(initialValue: "")
-        let word = getRootWord()
-        _rootWord = State(initialValue: word)
+    @State private var score = 0
 
-        for char in rootWord {
-            let charFreq = freq[char] ?? 0
-            freq[char] = charFreq + 1
-        }
-    }
     
     func addNewWord() {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
@@ -58,6 +49,7 @@ struct ContentView: View {
             return
         }
         
+        score += answer.count
         withAnimation {
             usedWords.insert(answer)
             presentWords.insert(answer, at: 0)
@@ -114,6 +106,9 @@ struct ContentView: View {
     }
     
     func startNewGame() {
+        presentWords = [String]()
+        usedWords = Set<String>()
+        score = 0
         rootWord = getRootWord()
 
         var frequencyMap = [Character: Int]()
@@ -143,6 +138,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .onAppear(perform: startNewGame)
             .navigationTitle(rootWord)
             .toolbar {
                 ToolbarItem {
@@ -151,13 +147,15 @@ struct ContentView: View {
                     }
                 }
             }
-                .onSubmit(addNewWord)
-                .alert(errorTitle, isPresented: $showingError) {
-                    Button("OK", role: .cancel) {}
-                } message: {
-                    Text(errorMessage)
-                }
+            .onSubmit(addNewWord)
+            .alert(errorTitle, isPresented: $showingError) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(errorMessage)
+            }
         }
+        
+        Text("Score: \(score)")
     }
 }
 
