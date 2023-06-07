@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var showingError = false
     @State private var freq = [Character: Int]()
     @State private var score = 0
-
+    @FocusState private var inputFocused: Bool
     
     func addNewWord() {
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
@@ -55,6 +55,7 @@ struct ContentView: View {
             presentWords.insert(answer, at: 0)
         }
         newWord = ""
+        inputFocused = true
     }
     
     func isOriginal(word: String) -> Bool {
@@ -118,6 +119,8 @@ struct ContentView: View {
         }
         
         freq = frequencyMap
+        
+        inputFocused = true
     }
     
     var body: some View {
@@ -127,6 +130,7 @@ struct ContentView: View {
                     TextField("Enter your word", text: $newWord)
                         .textInputAutocapitalization(.never)
                         .disableAutocorrection(true)
+                        .focused($inputFocused)
                 }
                 
                 Section {
@@ -149,7 +153,9 @@ struct ContentView: View {
             }
             .onSubmit(addNewWord)
             .alert(errorTitle, isPresented: $showingError) {
-                Button("OK", role: .cancel) {}
+                Button("OK", role: .cancel) {
+                    inputFocused = true
+                }
             } message: {
                 Text(errorMessage)
             }
