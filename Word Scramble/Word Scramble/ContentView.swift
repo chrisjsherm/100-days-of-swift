@@ -35,7 +35,7 @@ struct ContentView: View {
         guard answer.count > 0 else {return}
         
         guard isOriginal(word: answer) else {
-            onWordError(title: "Word used already", message: "Be more original")
+            onWordError(title: "Word used already", message: "Be more original.")
             return
         }
 
@@ -46,6 +46,16 @@ struct ContentView: View {
 
         guard isReal(word: answer) else {
             onWordError(title: "Word not recognized", message: "You can't just make them up, you know!")
+            return
+        }
+        
+        guard answer.count >= 3 else {
+            onWordError(title: "Word too short", message: "Valid answers must be at least three characters in length.")
+            return
+        }
+        
+        guard answer != rootWord else {
+            onWordError(title: "Invalid entry", message: "You cannot use the root word.")
             return
         }
         
