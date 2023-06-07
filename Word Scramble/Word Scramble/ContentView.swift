@@ -15,8 +15,7 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
-    
-    private var freq = [Character: Int]()
+    @State private var freq = [Character: Int]()
     
     init() {
         _rootWord = State(initialValue: "")
@@ -114,6 +113,18 @@ struct ContentView: View {
         fatalError("Could not load start.txt from bundle.")
     }
     
+    func startNewGame() {
+        rootWord = getRootWord()
+
+        var frequencyMap = [Character: Int]()
+        for char in rootWord {
+            let charFreq = frequencyMap[char] ?? 0
+            frequencyMap[char] = charFreq + 1
+        }
+        
+        freq = frequencyMap
+    }
+    
     var body: some View {
         NavigationView {
             List {
@@ -133,6 +144,13 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(rootWord)
+            .toolbar {
+                ToolbarItem {
+                    Button("New Game") {
+                        startNewGame()
+                    }
+                }
+            }
                 .onSubmit(addNewWord)
                 .alert(errorTitle, isPresented: $showingError) {
                     Button("OK", role: .cancel) {}
