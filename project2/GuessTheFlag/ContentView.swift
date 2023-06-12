@@ -13,8 +13,9 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     @State private var questionNum = 0
 
-    @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
+    @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
     @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var rotateDict = [100: 0.0]
 
     var body: some View {
         ZStack {
@@ -46,6 +47,7 @@ struct ContentView: View {
                             flagTapped(number)
                         } label: {
                             FlagView(country: countries[number])
+                                .rotationEffect(.degrees(rotateDict[number] ?? 0.0))
                         }
                     }
                 }
@@ -89,12 +91,12 @@ struct ContentView: View {
             scoreTitle = "Wrong—that is the flag of \(countries[correctAnswer])"
         }
 
+        rotateDict[number] = (rotateDict[number] ?? 0) + 360.0
         showingScore = true
     }
 
     func askQuestion() {
-        countries.shuffle()
-        correctAnswer = Int.random(in: 0...2)
+        correctAnswer = Int.random(in: 0..<countries.count)
     }
     
     func reset() {
