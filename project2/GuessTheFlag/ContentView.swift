@@ -12,10 +12,10 @@ struct ContentView: View {
     @State private var score = 0
     @State private var scoreTitle = ""
     @State private var questionNum = 0
-
+    @State private var selectedCountryIndices = Array<Int>()
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
     @State private var correctAnswer = Int.random(in: 0...2)
-    @State private var rotateDict = [100: 0.0]
+    @State private var rotationDict: Dictionary<Int, Double> = [:]
 
     var body: some View {
         ZStack {
@@ -42,12 +42,12 @@ struct ContentView: View {
                             .font(.largeTitle.weight(.semibold))
                     }
 
-                    ForEach(0..<3) { number in
+                    ForEach(selectedCountryIndices, id: \.self) { idx in
                         Button {
-                            flagTapped(number)
+                            flagTapped(idx)
                         } label: {
-                            FlagView(country: countries[number])
-                                .rotationEffect(.degrees(rotateDict[number] ?? 0.0))
+                            FlagView(country: countries[idx])
+                                .rotation3DEffect(.degrees(rotationDict[idx] ?? 0.0), axis: (x: 0, y: 1, z: 0))
                         }
                     }
                 }
@@ -80,23 +80,37 @@ struct ContentView: View {
                 Text("Your score is \(score)")
             }
         }
+        .onAppear {
+            reset()
+        }
     }
 
     func flagTapped(_ number: Int) {
+        withAnimation {
+            rotationDict[number] = (rotationDict[number] ?? 0) + 360.0
+        }
+        
         questionNum += 1
         if number == correctAnswer {
             scoreTitle = "Correct"
             score += 1
         } else {
-            scoreTitle = "Wrong—that is the flag of \(countries[correctAnswer])"
+            scoreTitle = "Wrong—that is the flag of \(countries[number])"
         }
-
-        rotateDict[number] = (rotateDict[number] ?? 0) + 360.0
+        
         showingScore = true
     }
 
     func askQuestion() {
-        correctAnswer = Int.random(in: 0..<countries.count)
+        var nextCountryIndices = Set<Int>()
+        while (nextCountryIndices.count < 3) {
+            nextCountryIndices.insert(Int.random(in: 0..<countries.count))
+        }
+        
+        withAnimation(.linear) {
+            selectedCountryIndices = Array(nextCountryIndices)
+        }
+        correctAnswer = selectedCountryIndices.randomElement() ?? 0
     }
     
     func reset() {
