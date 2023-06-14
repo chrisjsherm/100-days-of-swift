@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var rotationDict: Dictionary<Int, Double> = [:]
+    @State private var opacityDict: Dictionary<Int, Double> = [:]
 
     var body: some View {
         ZStack {
@@ -48,6 +49,7 @@ struct ContentView: View {
                         } label: {
                             FlagView(country: countries[idx])
                                 .rotation3DEffect(.degrees(rotationDict[idx] ?? 0.0), axis: (x: 0, y: 1, z: 0))
+                                .opacity(opacityDict[idx] ?? 1.0)
                         }
                     }
                 }
@@ -86,8 +88,14 @@ struct ContentView: View {
     }
 
     func flagTapped(_ number: Int) {
-        withAnimation {
-            rotationDict[number] = (rotationDict[number] ?? 0) + 360.0
+        for idx in selectedCountryIndices {
+            withAnimation {
+                if idx == number {
+                    rotationDict[idx] = (rotationDict[idx] ?? 0) + 360.0
+                } else {
+                    opacityDict[idx] = 0.25
+                }
+            }
         }
         
         questionNum += 1
@@ -104,7 +112,9 @@ struct ContentView: View {
     func askQuestion() {
         var nextCountryIndices = Set<Int>()
         while (nextCountryIndices.count < 3) {
-            nextCountryIndices.insert(Int.random(in: 0..<countries.count))
+            let idx = Int.random(in: 0..<countries.count)
+            nextCountryIndices.insert(idx)
+            opacityDict[idx] = 1.0
         }
         
         withAnimation(.linear) {
