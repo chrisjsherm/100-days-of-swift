@@ -7,15 +7,38 @@
 
 import SwiftUI
 
+enum QuestionCount: Int {
+    case Five = 5
+    case Ten = 10
+    case Twenty = 20
+}
+
+struct SettingsView: View {
+    @State var level: Double
+    @State var questionCount: QuestionCount
+    
+    var body: some View {
+        List {
+            Section(header: Text("Level")) {
+                Stepper("\(level, specifier: "%.0f")", value: $level, in: 2...12, step: 1.0)
+            }
+            
+            Section(header: Text("Question count")) {
+                Picker(selection: $questionCount, label: Text("Question count")) {
+                    Text("\(QuestionCount.Five.rawValue)").tag(QuestionCount.Five)
+                    Text("\(QuestionCount.Ten.rawValue)").tag(QuestionCount.Ten)
+                    Text("\(QuestionCount.Twenty.rawValue)").tag(QuestionCount.Twenty)
+                }
+                .pickerStyle(.inline)
+                .labelsHidden()
+            }
+        }
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        SettingsView(level: 2.0, questionCount: QuestionCount.Five)
     }
 }
 
