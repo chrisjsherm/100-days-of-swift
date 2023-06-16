@@ -37,10 +37,6 @@ struct SettingsView: View {
     }
 }
 
-extension String: LocalizedError {
-    public var errorDescription: String? { return self }
-}
-
 struct ContentView: View {
     @State private var level = 2.0
 
