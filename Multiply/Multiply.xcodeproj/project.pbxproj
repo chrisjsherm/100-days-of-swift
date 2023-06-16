@@ -13,6 +13,7 @@
 		AA91F8522A3B463E00598DEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA91F8512A3B463E00598DEA /* Preview Assets.xcassets */; };
 		AAFC1E732A3C94DF00B059A4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC1E722A3C94DF00B059A4 /* GameView.swift */; };
 		AAFC1E752A3C996B00B059A4 /* LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC1E742A3C996B00B059A4 /* LocalizedError.swift */; };
+		AAFC1E772A3C99B300B059A4 /* EnumQuestionCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC1E762A3C99B300B059A4 /* EnumQuestionCount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		AA91F8512A3B463E00598DEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AAFC1E722A3C94DF00B059A4 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AAFC1E742A3C996B00B059A4 /* LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedError.swift; sourceTree = "<group>"; };
+		AAFC1E762A3C99B300B059A4 /* EnumQuestionCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumQuestionCount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +57,13 @@
 		AA91F8492A3B463D00598DEA /* Multiply */ = {
 			isa = PBXGroup;
 			children = (
+				AAFC1E742A3C996B00B059A4 /* LocalizedError.swift */,
 				AA91F84A2A3B463D00598DEA /* MultiplyApp.swift */,
 				AA91F84C2A3B463D00598DEA /* ContentView.swift */,
 				AAFC1E722A3C94DF00B059A4 /* GameView.swift */,
+				AAFC1E762A3C99B300B059A4 /* EnumQuestionCount.swift */,
 				AA91F84E2A3B463E00598DEA /* Assets.xcassets */,
 				AA91F8502A3B463E00598DEA /* Preview Content */,
-				AAFC1E742A3C996B00B059A4 /* LocalizedError.swift */,
 			);
 			path = Multiply;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				AA91F84D2A3B463D00598DEA /* ContentView.swift in Sources */,
 				AAFC1E732A3C94DF00B059A4 /* GameView.swift in Sources */,
 				AA91F84B2A3B463D00598DEA /* MultiplyApp.swift in Sources */,
+				AAFC1E772A3C99B300B059A4 /* EnumQuestionCount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

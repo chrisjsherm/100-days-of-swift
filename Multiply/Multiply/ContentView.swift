@@ -8,12 +8,6 @@
 import SwiftUI
 import Combine
 
-enum QuestionCount: Int {
-    case Five = 5
-    case Ten = 10
-    case Twenty = 20
-}
-
 struct SettingsView: View {
     @Binding var level: Double
     @State var questionCount: QuestionCount
