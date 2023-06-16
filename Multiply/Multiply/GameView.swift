@@ -11,18 +11,85 @@ struct GameView: View {
     @State private var answer: Int?
     @State private var errorMessage = ""
     @State private var isAnswerValid: Bool?
-    @State private var isShowingError = false
     @State private var operandFirst: Int?
     @State private var operandSecond: Int?
+    @State private var questionCount: Int
+    @State private var questionNumber = 0
     @State private var resultMessage = ""
     
-    init(level: Int) {
+    init(level: Int, questionCount: Int) {
         self.level = level
+        self.questionCount = questionCount
     }
     
     let level: Int
     
-    func askQuestion(level: Int) {
+    var body: some View {
+        VStack {
+            Text("Level \(level)")
+                .font(.callout)
+            Text("Question \(questionNumber) of \(questionCount)")
+                .font(.caption)
+            
+            Spacer()
+            
+            Text("Determine the product of")
+                .font(.title2)
+                .padding()
+            Text("\(operandFirst ?? 1) x \(operandSecond ?? 1)")
+                .font(.largeTitle)
+            
+            LabeledContent {
+                TextField("Answer", value: $answer, format: .number)
+            } label: {
+                Text("Product:")
+            }
+            .padding(.leading)
+            .font(.title2)
+            
+            Text("\(errorMessage)")
+                .font(.caption)
+                .foregroundColor(.red)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                        
+            if isAnswerValid != nil {
+                Text("\(resultMessage)")
+                    .font(.title)
+                    .padding()
+            }
+            
+            Spacer()
+            
+            if (resultMessage == "") {
+                Button("Submit") {
+                    errorMessage = ""
+                    do {
+                        isAnswerValid = try validateAnswer()
+                    } catch {
+                        errorMessage = "Please enter an answer"
+                    }
+                }
+            } else if (questionNumber < questionCount) {
+                Button("Next question") {
+                    askQuestion(level: level)
+                }
+            } else {
+                Button("New game") {
+                    reset()
+                }
+            }
+        }
+        .onAppear() {
+            answer = nil
+            askQuestion(level: level)
+        }
+    }
+    
+    private func askQuestion(level: Int) {
+        questionNumber += 1
+        resultMessage = ""
+        
         let first = Int.random(in: 0...level)
         let second = Int.random(in: 2...level)
         
@@ -30,7 +97,12 @@ struct GameView: View {
         self.operandSecond = second
     }
     
-    func validateAnswer() throws -> Bool {
+    private func reset() {
+        questionNumber = 0
+        askQuestion(level: level)
+    }
+    
+    private func validateAnswer() throws -> Bool {
         guard operandFirst != nil && operandSecond != nil else {
             fatalError("Operands were not set.")
         }
@@ -47,61 +119,10 @@ struct GameView: View {
         }
         return result
     }
-    
-    var body: some View {
-        VStack {
-            Text("Level \(level)")
-                .font(.callout)
-            
-            Spacer()
-            
-            Text("Determine the product of")
-                .font(.title2)
-                .padding()
-            Text("\(operandFirst ?? 1) x \(operandSecond ?? 1)")
-                .font(.largeTitle)
-            
-            LabeledContent {
-                TextField("Answer", value: $answer, format: .number)
-            } label: {
-                Text("Product:")
-            }
-            .padding()
-            .font(.title2)
-            
-            if isShowingError {
-                Text("\(errorMessage)")
-                    .font(.caption)
-                    .foregroundColor(.red)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-            }
-                        
-            if isAnswerValid != nil {
-                Text("\(resultMessage)")
-                    .font(.title)
-                    .padding()
-            }
-            
-            Spacer()
-            
-            Button("Submit") {
-                errorMessage = ""
-                do {
-                    isAnswerValid = try validateAnswer()
-                } catch {
-                    errorMessage = "Please enter an answer"
-                }
-            }
-        }
-        .onAppear() {
-            askQuestion(level: level)
-        }
-    }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(level: 5)
+        GameView(level: 5, questionCount: 5)
     }
 }

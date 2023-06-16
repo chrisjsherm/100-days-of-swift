@@ -14,6 +14,7 @@
 		AAFC1E732A3C94DF00B059A4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC1E722A3C94DF00B059A4 /* GameView.swift */; };
 		AAFC1E752A3C996B00B059A4 /* LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC1E742A3C996B00B059A4 /* LocalizedError.swift */; };
 		AAFC1E772A3C99B300B059A4 /* EnumQuestionCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC1E762A3C99B300B059A4 /* EnumQuestionCount.swift */; };
+		AAFC1E792A3C9A0D00B059A4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC1E782A3C9A0D00B059A4 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AAFC1E722A3C94DF00B059A4 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AAFC1E742A3C996B00B059A4 /* LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedError.swift; sourceTree = "<group>"; };
 		AAFC1E762A3C99B300B059A4 /* EnumQuestionCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumQuestionCount.swift; sourceTree = "<group>"; };
+		AAFC1E782A3C9A0D00B059A4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				AAFC1E762A3C99B300B059A4 /* EnumQuestionCount.swift */,
 				AA91F84E2A3B463E00598DEA /* Assets.xcassets */,
 				AA91F8502A3B463E00598DEA /* Preview Content */,
+				AAFC1E782A3C9A0D00B059A4 /* SettingsView.swift */,
 			);
 			path = Multiply;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				AAFC1E752A3C996B00B059A4 /* LocalizedError.swift in Sources */,
 				AA91F84D2A3B463D00598DEA /* ContentView.swift in Sources */,
 				AAFC1E732A3C94DF00B059A4 /* GameView.swift in Sources */,
+				AAFC1E792A3C9A0D00B059A4 /* SettingsView.swift in Sources */,
 				AA91F84B2A3B463D00598DEA /* MultiplyApp.swift in Sources */,
 				AAFC1E772A3C99B300B059A4 /* EnumQuestionCount.swift in Sources */,
 			);

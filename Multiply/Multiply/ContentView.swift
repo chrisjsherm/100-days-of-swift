@@ -6,41 +6,18 @@
 //
 
 import SwiftUI
-import Combine
-
-struct SettingsView: View {
-    @Binding var level: Double
-    @State var questionCount: QuestionCount
-    
-    var body: some View {
-        List {
-            Section(header: Text("Level")) {
-                Stepper("\(level, specifier: "%.0f")", value: $level, in: 2...12, step: 1.0)
-            }
-            
-            Section(header: Text("Question count")) {
-                Picker(selection: $questionCount, label: Text("Question count")) {
-                    Text("\(QuestionCount.Five.rawValue)").tag(QuestionCount.Five)
-                    Text("\(QuestionCount.Ten.rawValue)").tag(QuestionCount.Ten)
-                    Text("\(QuestionCount.Twenty.rawValue)").tag(QuestionCount.Twenty)
-                }
-                .pickerStyle(.inline)
-                .labelsHidden()
-            }
-        }
-    }
-}
 
 struct ContentView: View {
     @State private var level = 2.0
+    @State private var questionCount = QuestionCount.Five
 
     var body: some View {
         NavigationStack {
-            SettingsView(level: $level, questionCount: QuestionCount.Five)
+            SettingsView(level: $level, questionCount: $questionCount)
                 .navigationTitle("Settings")
                 .toolbar {
-                    NavigationLink("Start") {
-                        GameView(level: Int(level))
+                    NavigationLink("Play") {
+                        GameView(level: Int(level), questionCount: questionCount.rawValue)
                     }
                 }
         }
