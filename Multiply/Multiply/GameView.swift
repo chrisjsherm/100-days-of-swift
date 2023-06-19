@@ -52,15 +52,17 @@ struct GameView: View {
                 .foregroundColor(.red)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-                        
-            if isAnswerValid != nil {
-                Text("\(resultMessage)")
-                    .font(.title)
-                    .padding()
-            }
             
             Spacer()
-            
+
+            ScrollView {
+                if isAnswerValid != nil {
+                    Text("\(resultMessage)")
+                        .font(.title)
+                        .padding()
+                }
+            }
+                        
             if (resultMessage == "") {
                 Button("Submit") {
                     errorMessage = ""
