@@ -41,6 +41,9 @@ struct GameView: View {
             
             LabeledContent {
                 TextField("Answer", value: $answer, format: .number)
+                    .onSubmit {
+                        onSubmit()
+                    }
             } label: {
                 Text("Product:")
             }
@@ -58,19 +61,14 @@ struct GameView: View {
             ScrollView {
                 if isAnswerValid != nil {
                     Text("\(resultMessage)")
-                        .font(.title)
+                        .font(.title2)
                         .padding()
                 }
             }
                         
             if (resultMessage == "") {
                 Button("Submit") {
-                    errorMessage = ""
-                    do {
-                        isAnswerValid = try validateAnswer()
-                    } catch {
-                        errorMessage = "Please enter an answer"
-                    }
+                    onSubmit()
                 }
             } else if (questionNumber < questionCount) {
                 Button("Next question") {
@@ -97,6 +95,15 @@ struct GameView: View {
         
         self.operandFirst = first
         self.operandSecond = second
+    }
+    
+    private func onSubmit() {
+        errorMessage = ""
+        do {
+            isAnswerValid = try validateAnswer()
+        } catch {
+            errorMessage = "Please enter an answer"
+        }
     }
     
     private func reset() {
