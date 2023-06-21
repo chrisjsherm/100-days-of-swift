@@ -54,6 +54,8 @@ struct ContentView: View {
                 
             }.navigationTitle("iExpense")
                 .toolbar {
+                    EditButton()
+
                     Button {
                         showingAddExpense = true
                     } label: {
