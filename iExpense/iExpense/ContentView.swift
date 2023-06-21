@@ -24,6 +24,7 @@ struct ContentView: View {
                         
                         Spacer()
                         Text(item.amount, format: AppConstants.currencyFormat)
+                            .heatified(amount: item.amount)
                     }
                 }
                 .onDelete(perform: removeItems)
