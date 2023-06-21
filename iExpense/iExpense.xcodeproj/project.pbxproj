@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA4DE2B62A433A27001DFEB0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4DE2B52A433A26001DFEB0 /* AppConstants.swift */; };
 		AA79A39D2A41DC0B0075DCD7 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79A39C2A41DC0B0075DCD7 /* ExpenseItem.swift */; };
 		AA79A39F2A41DC450075DCD7 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79A39E2A41DC450075DCD7 /* Expenses.swift */; };
 		AA79A3A12A41E1CF0075DCD7 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79A3A02A41E1CF0075DCD7 /* AddView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA4DE2B52A433A26001DFEB0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		AA79A39C2A41DC0B0075DCD7 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		AA79A39E2A41DC450075DCD7 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		AA79A3A02A41E1CF0075DCD7 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				AAAE103A2A408FCD00B39DB4 /* iExpenseApp.swift */,
 				AAAE103C2A408FCD00B39DB4 /* ContentView.swift */,
 				AA79A3A02A41E1CF0075DCD7 /* AddView.swift */,
+				AA4DE2B52A433A26001DFEB0 /* AppConstants.swift */,
 				AA79A39C2A41DC0B0075DCD7 /* ExpenseItem.swift */,
 				AA79A39E2A41DC450075DCD7 /* Expenses.swift */,
 				AAAE103E2A408FCF00B39DB4 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 				AA79A39F2A41DC450075DCD7 /* Expenses.swift in Sources */,
 				AAAE103D2A408FCD00B39DB4 /* ContentView.swift in Sources */,
 				AA79A3A12A41E1CF0075DCD7 /* AddView.swift in Sources */,
+				AA4DE2B62A433A27001DFEB0 /* AppConstants.swift in Sources */,
 				AA79A39D2A41DC0B0075DCD7 /* ExpenseItem.swift in Sources */,
 				AAAE103B2A408FCD00B39DB4 /* iExpenseApp.swift in Sources */,
 			);
