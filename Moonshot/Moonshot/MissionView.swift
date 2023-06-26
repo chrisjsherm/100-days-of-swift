@@ -48,7 +48,7 @@ struct MissionView: View {
                         HStack {
                             ForEach(crew, id: \.role) { crewMember in
                                 NavigationLink {
-                                    Text("Astronaut details")
+                                    AstronautView(astronaut: crewMember.astronaut)
                                 } label: {
                                     HStack {
                                         Image(crewMember.astronaut.id)
@@ -70,6 +70,9 @@ struct MissionView: View {
                                     .padding(.horizontal)
                                     .id(crewMember.astronaut.id)
                                 }
+                                .simultaneousGesture(TapGesture().onEnded {
+                                    cancelTimer()
+                                })
                             }
                         }
                         .simultaneousGesture(
