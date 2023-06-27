@@ -7,19 +7,10 @@
 
 import SwiftUI
 
-struct CrewMember {
-    let role: String
-    let astronaut: Astronaut
-}
-
 struct MissionView: View {
     let mission: Mission
     let crew: [CrewMember]
     
-    @State private var currentIndex = 0
-    
-    private let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
-
     init(mission: Mission, astronauts: [String: Astronaut]) {
         self.mission = mission
         self.crew = mission.crew.map { member in
@@ -51,57 +42,7 @@ struct MissionView: View {
                     .foregroundColor(.lightBackground)
                     .padding(.vertical)
                 
-                ScrollViewReader { scrollProxy in
-                    ScrollView(.horizontal, showsIndicators: true) {
-                        HStack {
-                            ForEach(crew, id: \.role) { crewMember in
-                                NavigationLink {
-                                    AstronautView(astronaut: crewMember.astronaut)
-                                } label: {
-                                    HStack {
-                                        Image(crewMember.astronaut.id)
-                                            .resizable()
-                                            .frame(width: 104, height: 80)
-                                            .clipShape(Capsule())
-                                            .glow(color: .blue, radius: 20)
-                                            .padding()
-
-                                        VStack(alignment: .leading) {
-                                            Text(crewMember.astronaut.name)
-                                                .foregroundColor(.white)
-                                                .font(.headline)
-                                            
-                                            Text(crewMember.role)
-                                                .foregroundColor(.secondary)
-                                        }
-                                    }
-                                    .padding(.horizontal)
-                                    .id(crewMember.astronaut.id)
-                                }
-                                .simultaneousGesture(TapGesture().onEnded {
-                                    cancelTimer()
-                                })
-                            }
-                        }
-                        .simultaneousGesture(
-                            DragGesture()
-                                .onChanged { value in
-                                    cancelTimer()
-                                }
-                        )
-                    }
-                    .onReceive(timer) { _ in
-                        currentIndex = (currentIndex + 1) % crew.count
-                        
-                        if currentIndex == 0 {
-                            cancelTimer()
-                        }
-                        
-                        withAnimation {
-                            scrollProxy.scrollTo(crew[currentIndex].astronaut.id)
-                        }
-                    }
-                }
+                CrewScrollView(crew: crew)
                 
                 Rectangle()
                     .frame(height: 2)
@@ -122,10 +63,6 @@ struct MissionView: View {
         .navigationTitle(mission.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .background(.darkBackground)
-    }
-    
-    func cancelTimer() {
-        self.timer.upstream.connect().cancel()
     }
 }
 
