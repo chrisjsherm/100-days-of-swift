@@ -97,7 +97,7 @@ struct MissionView: View {
                             cancelTimer()
                         }
                         
-                        withAnimation(.linear(duration: 3)) {
+                        withAnimation {
                             scrollProxy.scrollTo(crew[currentIndex].astronaut.id)
                         }
                     }
