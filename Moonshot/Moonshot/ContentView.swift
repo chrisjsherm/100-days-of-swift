@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    let missionLayout: MissionLayout
     let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
     let columns = [
@@ -16,7 +17,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Group {
-                MissionGridView(astronauts: astronauts, missions: missions)
+                switch missionLayout {
+                case .grid:
+                    MissionGridView(astronauts: astronauts, missions: missions)
+                case .list:
+                    MissionListView(astronauts: astronauts, missions: missions)
+                }
             }.navigationTitle("Moonshot")
                 .background(.darkBackground)
             .preferredColorScheme(.dark)
@@ -26,6 +32,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(missionLayout: MissionLayout.grid)
     }
 }
