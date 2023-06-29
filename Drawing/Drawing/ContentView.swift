@@ -7,34 +7,23 @@
 
 import SwiftUI
 
-struct Arc: InsettableShape {
-    var startAngle: Angle
-    var endAngle: Angle
-    var clockwise: Bool
-    var insetAmount = 0.0
-
-    func path(in rect: CGRect) -> Path {
-        let rotationAdjustment = Angle.degrees(90)
-        let modifiedStart = startAngle - rotationAdjustment
-        let modifiedEnd = endAngle - rotationAdjustment
-        
-        var path = Path()
-        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: rect.width / 2 - insetAmount, startAngle: modifiedStart, endAngle: modifiedEnd, clockwise: !clockwise)
-
-        return path
-    }
-    
-    func inset(by amount: CGFloat) -> some InsettableShape {
-        var arc = self
-        arc.insetAmount += amount
-        return arc
-    }
-}
-
 struct ContentView: View {
+    @State private var petalOffset = -14.0
+    @State private var petalWidth = 51.0
+    
     var body: some View {
-        Arc(startAngle: .degrees(0), endAngle: .degrees(110), clockwise: true)
-            .strokeBorder(.blue, lineWidth: 10)
+        VStack {
+            Flower(petalOffset: petalOffset, petalWidth: petalWidth)
+                .stroke(.red, lineWidth: 1)
+            
+            Text("Offset: \(petalOffset)")
+            Slider(value: $petalOffset, in: -40...40)
+                .padding([.horizontal, .bottom])
+            
+            Text("Width: \(petalWidth)")
+            Slider(value: $petalWidth, in: 0...100)
+                .padding(.horizontal)
+        }
     }
 }
 
