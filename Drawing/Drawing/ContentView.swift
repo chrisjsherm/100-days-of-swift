@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var insetAmount = 50.0
+    @State private var rows = 4
+    @State private var columns = 4
 
     var body: some View {
-        Trapezoid(insetAmount: insetAmount)
-            .frame(width: 200, height: 100)
+        Checkerboard(rows: rows, columns: columns)
             .onTapGesture {
-                withAnimation {
-                    insetAmount = Double.random(in: 10...90)
+                withAnimation(.linear(duration: 3)) {
+                    rows = 8
+                    columns = 16
                 }
             }
     }
