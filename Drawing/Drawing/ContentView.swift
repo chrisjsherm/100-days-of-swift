@@ -12,34 +12,17 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            ZStack {
-                Circle()
-                    .fill(.red)
-                    .frame(width: 200 * amount)
-                    .offset(x: -50, y: -80)
-                    .blendMode(.screen)
-
-                Circle()
-                    .fill(.green)
-                    .frame(width: 200 * amount)
-                    .offset(x: 50, y: -80)
-                    .blendMode(.screen)
-
-                Circle()
-                    .fill(.blue)
-                    .frame(width: 200 * amount)
-                    .blendMode(.screen)
-            }
-            .frame(width: 300, height: 300)
+            Image("Example")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+                .saturation(amount)
 
             Slider(value: $amount)
                 .padding()
             Text("\(amount)")
-                .foregroundColor(.white)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.black)
-        .ignoresSafeArea()
     }
 }
 
