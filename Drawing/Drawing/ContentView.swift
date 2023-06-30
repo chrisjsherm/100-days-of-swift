@@ -8,21 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var amount = 0.5
+    @State private var insetAmount = 50.0
 
     var body: some View {
-        VStack {
-            Image("Example")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 200)
-                .saturation(amount)
-
-            Slider(value: $amount)
-                .padding()
-            Text("\(amount)")
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        Trapezoid(insetAmount: insetAmount)
+            .frame(width: 200, height: 100)
+            .onTapGesture {
+                withAnimation {
+                    insetAmount = Double.random(in: 10...90)
+                }
+            }
     }
 }
 
