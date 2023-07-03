@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var strokeWidth = 5.0
+    @State private var colorCycle = 0.0
 
     var body: some View {
         VStack {
-            Text("Arrow")
+            Text("Color-cycling Rectangle")
             
-            Arrow()
-                .stroke(.blue, style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round, lineJoin: .round))
-                .frame(width: 200, height: 200)
+            ColorCyclingRectangle(amount: colorCycle)
+                .frame(width: 300, height: 300)
             
-            Slider(value: $strokeWidth, in: 1.0...25.0)
+            Slider(value: $colorCycle, in: 0.0...1.0)
                 .padding()
         }
     }
