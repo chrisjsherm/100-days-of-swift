@@ -7,9 +7,9 @@
 
 import Foundation
 
-class Activity {
+class Activity: ObservableObject {
     var name: String
-    var isComplete = false
+    @Published var isComplete = false
     
     init(name: String, isComplete: Bool = false) {
         self.name = name

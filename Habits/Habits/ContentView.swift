@@ -15,12 +15,17 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(Sport.allCases) { item in
-                    Text(item.rawValue)
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(Sport.allCases) { item in
+                        NavigationLink("\(item.rawValue)") {
+                            DetailView(sport: item)
+                        }
+                    }
                 }
             }
+            .navigationTitle("Habits")
         }
     }
 }
