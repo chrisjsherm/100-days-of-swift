@@ -11,6 +11,8 @@
 		AAD24A742A5493A600281317 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD24A732A5493A600281317 /* ContentView.swift */; };
 		AAD24A762A5493A800281317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD24A752A5493A800281317 /* Assets.xcassets */; };
 		AAD24A792A5493A800281317 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD24A782A5493A800281317 /* Preview Assets.xcassets */; };
+		AAD24A802A5493DC00281317 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD24A7F2A5493DC00281317 /* Activity.swift */; };
+		AAD24A822A54947000281317 /* SportsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD24A812A54947000281317 /* SportsEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		AAD24A732A5493A600281317 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AAD24A752A5493A800281317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAD24A782A5493A800281317 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AAD24A7F2A5493DC00281317 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		AAD24A812A54947000281317 /* SportsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				AAD24A712A5493A600281317 /* HabitsApp.swift */,
 				AAD24A732A5493A600281317 /* ContentView.swift */,
+				AAD24A812A54947000281317 /* SportsEnum.swift */,
+				AAD24A7F2A5493DC00281317 /* Activity.swift */,
 				AAD24A752A5493A800281317 /* Assets.xcassets */,
 				AAD24A772A5493A800281317 /* Preview Content */,
 			);
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD24A802A5493DC00281317 /* Activity.swift in Sources */,
 				AAD24A742A5493A600281317 /* ContentView.swift in Sources */,
 				AAD24A722A5493A600281317 /* HabitsApp.swift in Sources */,
+				AAD24A822A54947000281317 /* SportsEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
