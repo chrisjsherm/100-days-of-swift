@@ -7,12 +7,14 @@
 
 import Foundation
 
-class Activity: ObservableObject {
-    var name: String
-    @Published var isComplete = false
+struct Activity: Identifiable, Codable {
+    var id = UUID()
+    let name: String
+    var description = ""
+    var hoursCompleted = 0
     
-    init(name: String, isComplete: Bool = false) {
+    init(name: String, description: String = "") {
         self.name = name
-        self.isComplete = isComplete
+        self.description = description
     }
 }

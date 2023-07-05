@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA68CB802A55A9AB00E12912 /* CustomActivityFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68CB7F2A55A9AB00E12912 /* CustomActivityFormView.swift */; };
 		AAD24A722A5493A600281317 /* HabitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD24A712A5493A600281317 /* HabitsApp.swift */; };
 		AAD24A742A5493A600281317 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD24A732A5493A600281317 /* ContentView.swift */; };
 		AAD24A762A5493A800281317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD24A752A5493A800281317 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA68CB7F2A55A9AB00E12912 /* CustomActivityFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityFormView.swift; sourceTree = "<group>"; };
 		AAD24A6E2A5493A600281317 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD24A712A5493A600281317 /* HabitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsApp.swift; sourceTree = "<group>"; };
 		AAD24A732A5493A600281317 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				AAD24A712A5493A600281317 /* HabitsApp.swift */,
 				AAD24A732A5493A600281317 /* ContentView.swift */,
+				AA68CB7F2A55A9AB00E12912 /* CustomActivityFormView.swift */,
 				AAD24A832A54976E00281317 /* DetailView.swift */,
 				AAD24A812A54947000281317 /* SportsEnum.swift */,
 				AAD24A7F2A5493DC00281317 /* Activity.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				AAD24A802A5493DC00281317 /* Activity.swift in Sources */,
 				AAD24A742A5493A600281317 /* ContentView.swift in Sources */,
+				AA68CB802A55A9AB00E12912 /* CustomActivityFormView.swift in Sources */,
 				AAD24A722A5493A600281317 /* HabitsApp.swift in Sources */,
 				AAD24A842A54976E00281317 /* DetailView.swift in Sources */,
 				AAD24A822A54947000281317 /* SportsEnum.swift in Sources */,
