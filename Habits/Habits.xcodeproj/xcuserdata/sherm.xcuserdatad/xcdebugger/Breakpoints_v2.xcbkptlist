@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "A3923B30-1FEA-467E-A96E-6440382B48BC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA901111-15DE-468D-9E1A-E2999FC513F7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Habits/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "columns"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AA901111-15DE-468D-9E1A-E2999FC513F7 - ae613357f64b20dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Habits.ContentView.init() -&gt; Habits.ContentView"
+                  moduleName = "Habits"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sherm/projects/ios/hacking-with-swift/Habits/Habits/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "238">
+               </Location>
+               <Location
+                  uuid = "AA901111-15DE-468D-9E1A-E2999FC513F7 - fb1388eac70a4e1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Habits.ContentView.init(customActivities: Swift.Array&lt;Habits.Activity&gt;) -&gt; Habits.ContentView"
+                  moduleName = "Habits"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sherm/projects/ios/hacking-with-swift/Habits/Habits/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "134">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

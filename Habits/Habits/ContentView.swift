@@ -17,6 +17,8 @@ struct ContentView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
+    private let defaults = UserDefaults.standard
+    static let keyCustomActivities = "CustomActivities"
     
     var body: some View {
         NavigationStack {
@@ -26,8 +28,13 @@ struct ContentView: View {
                     
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 15) {
                         ForEach(Sport.allCases) { item in
+                            let key = "\(item.rawValue):hours"
+                            // Defaults to 0 when the key does not exist.
+                            let hours = defaults.integer(forKey: key)                            
+                            let activity = Activity(name: "\(item.rawValue)", description: "", hoursCompleted: hours)
+                            
                             NavigationLink("\(item.rawValue)") {
-                                DetailView(name: item.rawValue)
+                                DetailView(activity: activity)
                             }
                         }
                     }
@@ -43,13 +50,13 @@ struct ContentView: View {
                         showingCustomForm.toggle()
                     }
                     .sheet(isPresented: $showingCustomForm) {
-                        CustomActivityFormView( customActivities: $customActivities)
+                        CustomActivityFormView(customActivities: $customActivities)
                     }
                     
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 15) {
                         ForEach(customActivities) { item in
                             NavigationLink("\(item.name)") {
-                                DetailView(name: item.name)
+                                DetailView(activity: item)
                             }
                         }
                     }

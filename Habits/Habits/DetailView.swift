@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct DetailView: View {
-    var name: String
-    @State private var hoursComplete = 0
-    
+    @StateObject var activity: Activity
+
     var body: some View {
         NavigationStack {
             VStack {                
-                Stepper("\(hoursComplete) hours complete", value: $hoursComplete, in: 0...24)
-            }.navigationTitle("\(name)")
+                Stepper("\(activity.hoursCompleted) hours completed",
+                        value: $activity.hoursCompleted, in: 0...24)
+            }
+            .navigationTitle("\(activity.name)")
         }
         .padding()
         

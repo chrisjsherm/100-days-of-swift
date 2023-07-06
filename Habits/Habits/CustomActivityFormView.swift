@@ -14,7 +14,7 @@ struct CustomActivityFormView: View {
     
     @State private var customName = ""
     @State private var customDescription = ""
-    
+        
     var body: some View {
         NavigationView {
             Form {
