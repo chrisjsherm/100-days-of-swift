@@ -11,6 +11,7 @@
 		AA3767292A584B040068C028 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3767282A584B040068C028 /* ContentView.swift */; };
 		AA37672B2A584B060068C028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA37672A2A584B060068C028 /* Assets.xcassets */; };
 		AA37672E2A584B060068C028 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA37672D2A584B060068C028 /* Preview Assets.xcassets */; };
+		AA98C1452A5C3F7A0041C0EB /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98C1442A5C3F7A0041C0EB /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AA3767282A584B040068C028 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA37672A2A584B060068C028 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA37672D2A584B060068C028 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA98C1442A5C3F7A0041C0EB /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				AA3767262A584B040068C028 /* Cupcake_CornerApp.swift */,
 				AA3767282A584B040068C028 /* ContentView.swift */,
+				AA98C1442A5C3F7A0041C0EB /* Order.swift */,
 				AA37672A2A584B060068C028 /* Assets.xcassets */,
 				AA37672C2A584B060068C028 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA98C1452A5C3F7A0041C0EB /* Order.swift in Sources */,
 				AA3767292A584B040068C028 /* ContentView.swift in Sources */,
 				AA3767272A584B040068C028 /* Cupcake_CornerApp.swift in Sources */,
 			);
