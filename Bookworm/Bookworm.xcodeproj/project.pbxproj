@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA8AF0932A601E040083F652 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AF0922A601E040083F652 /* AddBookView.swift */; };
 		AAB042482A5EDEDD00AA2E66 /* BookwormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB042472A5EDEDD00AA2E66 /* BookwormApp.swift */; };
 		AAB0424A2A5EDEDD00AA2E66 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB042492A5EDEDD00AA2E66 /* ContentView.swift */; };
 		AAB0424C2A5EDEDE00AA2E66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAB0424B2A5EDEDE00AA2E66 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA8AF0922A601E040083F652 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		AAB042442A5EDEDD00AA2E66 /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB042472A5EDEDD00AA2E66 /* BookwormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookwormApp.swift; sourceTree = "<group>"; };
 		AAB042492A5EDEDD00AA2E66 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				AAB042472A5EDEDD00AA2E66 /* BookwormApp.swift */,
 				AAB042492A5EDEDD00AA2E66 /* ContentView.swift */,
 				AAB042572A5EE1D200AA2E66 /* Bookworm.xcdatamodeld */,
+				AA8AF0922A601E040083F652 /* AddBookView.swift */,
 				AAB0425A2A5EE23D00AA2E66 /* DataController.swift */,
 				AAB042552A5EDFBB00AA2E66 /* PushButtonView.swift */,
 				AAB0424B2A5EDEDE00AA2E66 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAB0425B2A5EE23D00AA2E66 /* DataController.swift in Sources */,
+				AA8AF0932A601E040083F652 /* AddBookView.swift in Sources */,
 				AAB0424A2A5EDEDD00AA2E66 /* ContentView.swift in Sources */,
 				AAB042592A5EE1D200AA2E66 /* Bookworm.xcdatamodeld in Sources */,
 				AAB042562A5EDFBB00AA2E66 /* PushButtonView.swift in Sources */,
