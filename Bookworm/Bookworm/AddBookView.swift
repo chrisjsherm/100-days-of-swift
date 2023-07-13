@@ -15,6 +15,7 @@ struct AddBookView: View {
     @State private var rating = 3
     @State private var genre = ""
     @State private var review = ""
+    @State private var reviewPlaceholder = "What did you think?"
     
     private let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     var body: some View {
@@ -32,7 +33,17 @@ struct AddBookView: View {
                 }
 
                 Section {
-                    TextEditor(text: $review)
+                    ZStack {
+                        if review.isEmpty {
+                            TextEditor(text: $reviewPlaceholder)
+                                .font(.body)
+                                .foregroundColor(.gray)
+                                .disabled(true)
+                        }
+                        TextEditor(text: $review)
+                            .font(.body)
+                            .opacity(review.isEmpty ? 0.25 : 1)
+                    }
 
                     RatingView(rating: $rating)
                 } header: {
