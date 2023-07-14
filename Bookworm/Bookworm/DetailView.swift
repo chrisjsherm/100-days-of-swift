@@ -10,6 +10,9 @@ import CoreData
 
 struct DetailView: View {
     let book: Book
+    @Environment(\.managedObjectContext) var context
+    @Environment(\.dismiss) var dismiss
+    @State private var showingDeleteAlert = false
     
     var body: some View {
         ScrollView {
@@ -39,7 +42,31 @@ struct DetailView: View {
                 .font(.largeTitle)
         }
         .navigationTitle(book.title ?? "Unknown Book")
-        .navigationBarTitleDisplayMode(.inline)    }
+        .navigationBarTitleDisplayMode(.inline)
+        .alert("Delete book", isPresented: $showingDeleteAlert) {
+            Button("Delete", role: .destructive, action: deleteBook)
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Are you sure?")
+        }
+        .toolbar {
+            Button {
+                showingDeleteAlert = true
+            } label: {
+                Label("Delete this book", systemImage: "trash")
+            }
+        }
+    }
+    
+    func deleteBook() {
+        // Mark book as deleted.
+        context.delete(book)
+        
+        // Persist changes.
+        try? context.save()
+        
+        dismiss()
+    }
 }
 
 struct DetailView_Previews: PreviewProvider {
