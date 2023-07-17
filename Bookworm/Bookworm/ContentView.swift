@@ -31,6 +31,7 @@ struct ContentView: View {
                             {
                                 Text(book.title ?? "Unknown title")
                                     .font(.headline)
+                                    .strikethrough(isTrash(book: book), color: .red)
                                 Text(book.author ?? "Unknown author")
                                     .foregroundColor(.secondary)
                             }
@@ -70,6 +71,14 @@ struct ContentView: View {
         
         // Persist changes.
         try? context.save()
+    }
+    
+    func isTrash(book: Book) -> Bool {
+        if book.rating == 1 {
+            return true
+        }
+        
+        return false
     }
 }
 
