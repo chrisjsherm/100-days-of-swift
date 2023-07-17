@@ -13,7 +13,8 @@ struct DetailView: View {
     @Environment(\.managedObjectContext) var context
     @Environment(\.dismiss) var dismiss
     @State private var showingDeleteAlert = false
-    
+    let formatter = DateFormatter()
+        
     var body: some View {
         ScrollView {
             ZStack(alignment: .bottomTrailing) {
@@ -40,6 +41,9 @@ struct DetailView: View {
 
             RatingView(rating: .constant(Int(book.rating)))
                 .font(.largeTitle)
+
+            Text("Rated on \(getDateStr(book: book))")
+                .padding(.top)
         }
         .navigationTitle(book.title ?? "Unknown Book")
         .navigationBarTitleDisplayMode(.inline)
@@ -67,6 +71,11 @@ struct DetailView: View {
         
         dismiss()
     }
+    
+    func getDateStr(book: Book) -> String {
+        formatter.dateStyle = .short
+        return formatter.string(from: book.ratingDate ?? Date.now)
+    }
 }
 
 struct DetailView_Previews: PreviewProvider {
@@ -79,6 +88,7 @@ struct DetailView_Previews: PreviewProvider {
         book.genre = "Fantasy"
         book.rating = 4
         book.review = "This was a great book!"
+        book.ratingDate = Date.now
         
         return NavigationView {
             DetailView(book: book)

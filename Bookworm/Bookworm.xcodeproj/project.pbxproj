@@ -68,12 +68,12 @@
 				AAB042472A5EDEDD00AA2E66 /* BookwormApp.swift */,
 				AAB042492A5EDEDD00AA2E66 /* ContentView.swift */,
 				AA8AF0982A602AC70083F652 /* DetailView.swift */,
-				AAB042572A5EE1D200AA2E66 /* Bookworm.xcdatamodeld */,
 				AA8AF0922A601E040083F652 /* AddBookView.swift */,
 				AA8AF0962A6027E50083F652 /* EmojiRatingView.swift */,
 				AA8AF0942A6022B40083F652 /* RatingView.swift */,
 				AAB0425A2A5EE23D00AA2E66 /* DataController.swift */,
 				AAB042552A5EDFBB00AA2E66 /* PushButtonView.swift */,
+				AAB042572A5EE1D200AA2E66 /* Bookworm.xcdatamodeld */,
 				AAB0424B2A5EDEDE00AA2E66 /* Assets.xcassets */,
 				AAB0424D2A5EDEDE00AA2E66 /* Preview Content */,
 			);
