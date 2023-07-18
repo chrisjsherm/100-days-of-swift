@@ -8,15 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+    @Environment(\.managedObjectContext) var moc
+
+        @FetchRequest(sortDescriptors: []) var animals: FetchedResults<Animal>
+
+        var body: some View {
+            VStack {
+                List(animals, id: \.self) { animal in
+                    Text(animal.name ?? "Unknown")
+                }
+
+                Button("Add") {
+                    let animal = Animal(context: moc)
+                    animal.name = "Turtle"
+                }
+
+                Button("Save") {
+                    do {
+                        try moc.save()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
         }
-        .padding()
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
