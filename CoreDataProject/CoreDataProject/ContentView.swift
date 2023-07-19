@@ -5,33 +5,40 @@
 //  Created by Christopher Sherman on 2023-07-18.
 //
 
+import CoreData
 import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "name BEGINSWITH[c] %@", "e")) var ships: FetchedResults<Ship>
 
-        @FetchRequest(sortDescriptors: []) var animals: FetchedResults<Animal>
+    var body: some View {
+        VStack {
+            List(ships, id: \.self) { ship in
+                Text(ship.name ?? "Unknown name")
+            }
 
-        var body: some View {
-            VStack {
-                List(animals, id: \.self) { animal in
-                    Text(animal.name ?? "Unknown")
-                }
+            Button("Add Examples") {
+                let ship1 = Ship(context: moc)
+                ship1.name = "Enterprise"
+                ship1.universe = "Star Trek"
 
-                Button("Add") {
-                    let animal = Animal(context: moc)
-                    animal.name = "Turtle"
-                }
+                let ship2 = Ship(context: moc)
+                ship2.name = "Defiant"
+                ship2.universe = "Star Trek"
 
-                Button("Save") {
-                    do {
-                        try moc.save()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                }
+                let ship3 = Ship(context: moc)
+                ship3.name = "Millennium Falcon"
+                ship3.universe = "Star Wars"
+
+                let ship4 = Ship(context: moc)
+                ship4.name = "Executor"
+                ship4.universe = "Star Wars"
+
+                try? moc.save()
             }
         }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
