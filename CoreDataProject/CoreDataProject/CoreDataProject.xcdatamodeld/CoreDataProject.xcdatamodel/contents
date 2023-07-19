@@ -8,6 +8,20 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="Candy" representedClassName="Candy" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="candy" inverseEntity="Country"/>
+    </entity>
+    <entity name="Country" representedClassName="Country" syncable="YES">
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="shortName" optional="YES" attributeType="String"/>
+        <relationship name="candy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Candy" inverseName="origin" inverseEntity="Candy"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="shortName"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <entity name="Movie" representedClassName="Movie" syncable="YES">
         <attribute name="director" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
