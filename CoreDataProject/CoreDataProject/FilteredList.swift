@@ -15,20 +15,24 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
     let content: (T) -> Content
 
     var body: some View {
-        List(fetchRequest, id: \.self) { singer in
-            self.content(singer)
+        if fetchRequest.isEmpty {
+            Text("No matching result")
+        } else {
+            List(fetchRequest, id: \.self) { item in
+                self.content(item)
+            }
         }
     }
 
     init(
         filterKey: String,
         filterValue: String,
-        filterOperator: String,
+        filterOperator: FilterOperator,
         @ViewBuilder content: @escaping (T) -> Content
     ) {
         _fetchRequest = FetchRequest<T>(
             sortDescriptors: [],
-            predicate: NSPredicate(format: "%K \(filterOperator) %@", filterKey, filterValue)
+            predicate: NSPredicate(format: "%K \(filterOperator.rawValue) %@", filterKey, filterValue)
         )
         self.content = content
     }
