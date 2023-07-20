@@ -14,12 +14,14 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            List {
-                ForEach(countries, id: \.self) { country in
-                    Section(country.wrappedFullName) {
-                        ForEach(country.candyArray, id: \.self) { candy in
-                            Text(candy.wrappedName)
-                        }
+            FilteredList(
+                filterKey: "shortName",
+                filterValue: "U",
+                filterOperator: "BEGINSWITH"
+            ) { (country: Country) in
+                Section(country.wrappedFullName) {
+                    ForEach(country.candyArray, id: \.self) { candy in
+                        Text(candy.wrappedName)
                     }
                 }
             }
