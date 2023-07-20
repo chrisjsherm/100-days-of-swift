@@ -28,10 +28,11 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
         filterKey: String,
         filterValue: String,
         filterOperator: FilterOperator,
+        sortDescriptors: [SortDescriptor<T>] = [],
         @ViewBuilder content: @escaping (T) -> Content
     ) {
         _fetchRequest = FetchRequest<T>(
-            sortDescriptors: [],
+            sortDescriptors: sortDescriptors,
             predicate: NSPredicate(format: "%K \(filterOperator.rawValue) %@", filterKey, filterValue)
         )
         self.content = content

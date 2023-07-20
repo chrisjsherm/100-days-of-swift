@@ -16,8 +16,9 @@ struct ContentView: View {
         VStack {
             FilteredList(
                 filterKey: "shortName",
-                filterValue: "UK",
-                filterOperator: FilterOperator.equals
+                filterValue: "CA",
+                filterOperator: FilterOperator.notEquals,
+                sortDescriptors: [SortDescriptor<Country>(\.fullName)]
             ) { (country: Country) in
                 Section(country.wrappedFullName) {
                     ForEach(country.candyArray, id: \.self) { candy in
