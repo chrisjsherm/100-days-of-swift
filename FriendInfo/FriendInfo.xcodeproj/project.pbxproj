@@ -11,6 +11,7 @@
 		AA154AE92A6AB5FA009DCF73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA154AE82A6AB5FA009DCF73 /* ContentView.swift */; };
 		AA154AEB2A6AB5FB009DCF73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA154AEA2A6AB5FB009DCF73 /* Assets.xcassets */; };
 		AA154AEE2A6AB5FB009DCF73 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA154AED2A6AB5FB009DCF73 /* Preview Assets.xcassets */; };
+		AA154AF52A6AB7FC009DCF73 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA154AF42A6AB7FC009DCF73 /* Friend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AA154AE82A6AB5FA009DCF73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA154AEA2A6AB5FB009DCF73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA154AED2A6AB5FB009DCF73 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA154AF42A6AB7FC009DCF73 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				AA154AE62A6AB5FA009DCF73 /* FriendInfoApp.swift */,
 				AA154AE82A6AB5FA009DCF73 /* ContentView.swift */,
+				AA154AF42A6AB7FC009DCF73 /* Friend.swift */,
 				AA154AEA2A6AB5FB009DCF73 /* Assets.xcassets */,
 				AA154AEC2A6AB5FB009DCF73 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA154AF52A6AB7FC009DCF73 /* Friend.swift in Sources */,
 				AA154AE92A6AB5FA009DCF73 /* ContentView.swift in Sources */,
 				AA154AE72A6AB5FA009DCF73 /* FriendInfoApp.swift in Sources */,
 			);

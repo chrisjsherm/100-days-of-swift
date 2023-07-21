@@ -8,14 +8,54 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var friends = [Friend]()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+                List {
+                    if friends.count > 0 {
+                        ForEach(friends) { friend in
+                            VStack(alignment: .leading) {
+                                Text(friend.name)
+                                    .font(.headline)
+                                    .padding(.bottom, 2)
+                                Text(friend.company).font(.subheadline)
+                                Text(friend.email).font(.subheadline)
+                            }
+                        }
+                    } else {
+                        Text("Empty")
+                    }
+                }
+                .navigationTitle("Friends")
+                .task {
+                    await getData()
+                }
+
         }
-        .padding()
+    }
+    
+    func getData() async {
+        print("Getting remote data")
+        guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
+            print("Invalid URL")
+            return
+        }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            
+            print("Decoding response")
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let decodedResponse = try decoder.decode([Friend].self, from: data)
+            print(decodedResponse)
+            friends = decodedResponse
+            
+        } catch {
+            print("Invalid data")
+            print(error)
+        }
     }
 }
 
