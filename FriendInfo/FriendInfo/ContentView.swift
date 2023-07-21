@@ -33,7 +33,9 @@ struct ContentView: View {
                 }
                 .navigationTitle("Friends")
                 .task {
-                    await getData()
+                    if friends.isEmpty {
+                        await getData()
+                    }
                 }
 
         }
@@ -53,7 +55,6 @@ struct ContentView: View {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let decodedResponse = try decoder.decode([Friend].self, from: data)
-            print(decodedResponse)
             friends = decodedResponse
             
         } catch {
