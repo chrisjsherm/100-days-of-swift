@@ -15,12 +15,16 @@ struct ContentView: View {
                 List {
                     if friends.count > 0 {
                         ForEach(friends) { friend in
-                            VStack(alignment: .leading) {
-                                Text(friend.name)
-                                    .font(.headline)
-                                    .padding(.bottom, 2)
-                                Text(friend.company).font(.subheadline)
-                                Text(friend.email).font(.subheadline)
+                            NavigationLink {
+                                FriendDetailView(friend: friend)
+                            } label: {
+                                VStack(alignment: .leading) {
+                                    Text(friend.name)
+                                        .font(.headline)
+                                        .padding(.bottom, 2)
+                                    Text(friend.company).font(.subheadline)
+                                    Text(friend.email).font(.subheadline)
+                                }
                             }
                         }
                     } else {
