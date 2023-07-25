@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @State private var friends = [Friend]()
+    @FetchRequest(sortDescriptors: []) var friends: FetchedResults<CachedFriend>
     
     var body: some View {
         NavigationView {
@@ -20,11 +20,11 @@ struct ContentView: View {
                                 FriendDetailView(friend: friend)
                             } label: {
                                 VStack(alignment: .leading) {
-                                    Text(friend.name)
+                                    Text(friend.wrappedName)
                                         .font(.headline)
                                         .padding(.bottom, 2)
-                                    Text(friend.company).font(.subheadline)
-                                    Text(friend.email).font(.subheadline)
+                                    Text(friend.wrappedCompany).font(.subheadline)
+                                    Text(friend.wrappedEmail).font(.subheadline)
                                 }
                             }
                         }
@@ -56,8 +56,23 @@ struct ContentView: View {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let decodedResponse = try decoder.decode([Friend].self, from: data)
-            friends = decodedResponse
             
+            for response in decodedResponse {
+                let friend = CachedFriend(context: moc)
+                friend.name = response.name
+                friend.id = response.id
+                friend.age = response.age
+                friend.company = response.company
+                friend.email = response.email
+                friend.address = response.address
+                friend.about = response.about
+                friend.registered = response.registered
+                friend.tags = response.tags.joined(separator: ",")
+            }
+            
+            await MainActor.run {
+                try? moc.save()
+            }
         } catch {
             print("Invalid data")
             print(error)

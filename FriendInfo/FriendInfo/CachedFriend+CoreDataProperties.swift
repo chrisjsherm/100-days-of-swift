@@ -48,5 +48,40 @@ extension CachedFriend {
 }
 
 extension CachedFriend : Identifiable {
-
+    public var wrappedName: String {
+        name ?? "NAME"
+    }
+    
+    public var wrappedEmail: String {
+        email ?? "EMAIL"
+    }
+    
+    public var wrappedAddress: String {
+        address ?? "ADDRESS"
+    }
+    
+    public var wrappedAbout: String {
+        about ?? "ABOUT"
+    }
+    
+    public var wrappedCompany: String {
+        company ?? "COMPANY"
+    }
+    
+    public var friendsArray: [CachedFriend] {
+        let set = friends as? Set<CachedFriend> ?? []
+        return set.sorted {
+            $0.wrappedName < $1.wrappedName
+        }
+    }
+    
+    public var tagsArray: [String] {
+        get {
+            return tags?.split(separator: ",") as? [String] ?? []
+        }
+        
+        set {
+            tags = newValue.joined(separator: ",")
+        }
+    }
 }

@@ -11,7 +11,7 @@ struct Friend: Codable, Identifiable {
     var id: UUID
     var isActive: Bool
     var name: String
-    var age: Int8
+    var age: Int16
     var company: String
     var email: String
     var address: String
