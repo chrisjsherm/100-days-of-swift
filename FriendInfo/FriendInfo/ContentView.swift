@@ -10,9 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var friends: FetchedResults<CachedFriend>
+    private static let lastUpdatedKey = "lastUpdated"
+    @State private var lastUpdatedVal = "—"
     
     var body: some View {
         NavigationView {
+            VStack(alignment: .leading) {
+                Text("Last updated: \(lastUpdatedVal)")
+                    .padding(.leading)
+                
                 List {
                     if friends.count > 0 {
                         ForEach(friends) { friend in
@@ -34,12 +40,21 @@ struct ContentView: View {
                 }
                 .navigationTitle("Friends")
                 .task {
-                    if friends.isEmpty {
-                        await getData()
-                    }
+                    await getData()
                 }
-
+            }
         }
+    }
+    
+    func getLastUpdated() -> String {
+        let timestamp = UserDefaults.standard.double(forKey: ContentView.lastUpdatedKey)
+        if timestamp == 0.0 {
+            return "—"
+        }
+        let date = Date(timeIntervalSince1970: timestamp)
+        let df = DateFormatter()
+        df.dateFormat = "dd/MM/yyyy HH:mm"
+        return df.string(from: date)
     }
     
     func getData() async {
@@ -73,9 +88,13 @@ struct ContentView: View {
             await MainActor.run {
                 try? moc.save()
             }
+            print("Finished getting data")
+            UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: ContentView.lastUpdatedKey)
+            lastUpdatedVal = getLastUpdated()
         } catch {
             print("Invalid data")
             print(error)
+            lastUpdatedVal = getLastUpdated()
         }
     }
 }

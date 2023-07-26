@@ -48,6 +48,7 @@ extension CachedFriend {
 }
 
 extension CachedFriend : Identifiable {
+    
     public var wrappedName: String {
         name ?? "NAME"
     }
@@ -68,11 +69,18 @@ extension CachedFriend : Identifiable {
         company ?? "COMPANY"
     }
     
+    
     public var friendsArray: [CachedFriend] {
         let set = friends as? Set<CachedFriend> ?? []
         return set.sorted {
             $0.wrappedName < $1.wrappedName
         }
+    }
+    
+    public var wrappedRegistrationDate: String {
+        let formatter3 = DateFormatter()
+        formatter3.dateFormat = "HH:mm E, d MMM y"
+        return formatter3.string(from: registered ?? Date.now)
     }
     
     public var tagsArray: [String] {

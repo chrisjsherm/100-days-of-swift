@@ -17,6 +17,7 @@ struct FriendDetailView: View {
             ListRowsView(title: "Company", value: friend.wrappedCompany)
             ListRowsView(title: "Email Address", value: friend.wrappedEmail)
             ListRowsView(title: "About", value: friend.wrappedAbout)
+            ListRowsView(title: "Registration Date", value: friend.wrappedRegistrationDate)
         }
         .navigationTitle(friend.wrappedName)
         .navigationBarTitleDisplayMode(.inline)
