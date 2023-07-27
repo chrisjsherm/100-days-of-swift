@@ -11,6 +11,7 @@
 		AA3E3BCC2A7297F800A5F445 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3E3BCB2A7297F800A5F445 /* ContentView.swift */; };
 		AA3E3BCE2A7297FA00A5F445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3E3BCD2A7297FA00A5F445 /* Assets.xcassets */; };
 		AA3E3BD12A7297FA00A5F445 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3E3BD02A7297FA00A5F445 /* Preview Assets.xcassets */; };
+		AA3E3BD82A729F7D00A5F445 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3E3BD72A729F7D00A5F445 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AA3E3BCB2A7297F800A5F445 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA3E3BCD2A7297FA00A5F445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3E3BD02A7297FA00A5F445 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA3E3BD72A729F7D00A5F445 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				AA3E3BC92A7297F800A5F445 /* InstafilterApp.swift */,
 				AA3E3BCB2A7297F800A5F445 /* ContentView.swift */,
+				AA3E3BD72A729F7D00A5F445 /* ImagePicker.swift */,
 				AA3E3BCD2A7297FA00A5F445 /* Assets.xcassets */,
 				AA3E3BCF2A7297FA00A5F445 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3E3BD82A729F7D00A5F445 /* ImagePicker.swift in Sources */,
 				AA3E3BCC2A7297F800A5F445 /* ContentView.swift in Sources */,
 				AA3E3BCA2A7297F800A5F445 /* InstafilterApp.swift in Sources */,
 			);
