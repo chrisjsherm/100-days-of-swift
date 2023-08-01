@@ -27,11 +27,11 @@ struct ContentView: View {
                         .padding(.top)
                     Text("Filter intensity: \(filterIntensity, specifier: "%.1f")")
                     
-                    Button("Save photo") {
-                        guard let inputImage = inputImage else { return }
-                        
-                        let imageSaver = ImageSaver()
-                        imageSaver.writeToPhotoAlbum(image: inputImage)
+                    Button("Save photo", action: save)
+                        .padding(.top)
+                    
+                    Button("Select new photo") {
+                        showingImagePicker = true
                     }
                     .padding(.top)
                 } else {
@@ -58,6 +58,13 @@ struct ContentView: View {
     func loadImage() {
         guard let inputImage = inputImage else {return}
         image = Image(uiImage: inputImage)
+    }
+    
+    func save() {
+        guard let inputImage = inputImage else { return }
+        
+        let imageSaver = ImageSaver()
+        imageSaver.writeToPhotoAlbum(image: inputImage)
     }
 }
 
