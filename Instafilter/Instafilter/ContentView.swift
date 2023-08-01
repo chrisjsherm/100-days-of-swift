@@ -14,6 +14,9 @@ struct ContentView: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var filterIntensity = 0.5
+    @State private var currentFilter = CIFilter.sepiaTone()
+    
+    let context = CIContext()
 
     var body: some View {
         NavigationStack {
@@ -25,6 +28,9 @@ struct ContentView: View {
                     
                     Slider(value: $filterIntensity, in: 0.0...1.0)
                         .padding(.top)
+                        .onChange(of: filterIntensity) { _ in
+                            filterImage()
+                        }
                     Text("Filter intensity: \(filterIntensity, specifier: "%.1f")")
                     
                     Button("Save photo", action: save)
@@ -57,7 +63,20 @@ struct ContentView: View {
     
     func loadImage() {
         guard let inputImage = inputImage else {return}
-        image = Image(uiImage: inputImage)
+        
+        let beginImage = CIImage(image: inputImage)
+        currentFilter.setValue(beginImage, forKey: kCIInputImageKey)
+        filterImage()
+    }
+    
+    func filterImage() {
+        currentFilter.intensity = Float(filterIntensity)
+        guard let outputImage = currentFilter.outputImage else {return}
+        
+        if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+            let uiImage = UIImage(cgImage: cgimg)
+            image = Image(uiImage: uiImage)
+        }
     }
     
     func save() {
