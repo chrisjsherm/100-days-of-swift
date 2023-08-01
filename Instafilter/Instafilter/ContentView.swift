@@ -13,29 +13,45 @@ struct ContentView: View {
     @State private var image: Image?
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
+    @State private var filterIntensity = 0.5
 
     var body: some View {
-        VStack {
-            image?
-                .resizable()
-                .scaledToFit()
-
-            Button("Select Image") {
-               showingImagePicker = true
+        NavigationStack {
+            VStack {
+                if image != nil {
+                    image!
+                        .resizable()
+                        .scaledToFit()
+                    
+                    Slider(value: $filterIntensity, in: 0.0...1.0)
+                        .padding(.top)
+                    Text("Filter intensity: \(filterIntensity, specifier: "%.1f")")
+                    
+                    Button("Save photo") {
+                        guard let inputImage = inputImage else { return }
+                        
+                        let imageSaver = ImageSaver()
+                        imageSaver.writeToPhotoAlbum(image: inputImage)
+                    }
+                    .padding(.top)
+                } else {
+                    Button("Tap to select a photo") {
+                       showingImagePicker = true
+                    }
+                    .frame(width: 200, height: 300)
+                    .background(Rectangle()
+                        .fill(.gray)
+                    )
+                    .foregroundColor(.white)
+                }
             }
-            
-            Button("Save Image") {
-                guard let inputImage = inputImage else { return }
-                
-                let imageSaver = ImageSaver()
-                imageSaver.writeToPhotoAlbum(image: inputImage)
+            .sheet(isPresented: $showingImagePicker) {
+                ImagePicker(image: $inputImage)
             }
-        }
-        .sheet(isPresented: $showingImagePicker) {
-            ImagePicker(image: $inputImage)
-        }
-        .onChange(of: inputImage) {
-            _ in loadImage()
+            .onChange(of: inputImage) {
+                _ in loadImage()
+            }
+            .navigationTitle("Instafilter")
         }
     }
     
