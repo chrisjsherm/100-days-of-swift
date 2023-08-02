@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var filterIntensity = 0.5
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     @State private var showingFilterSheet = false
+    @State private var processedImage: UIImage?
     
     let context = CIContext()
 
@@ -97,14 +98,22 @@ struct ContentView: View {
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
             let uiImage = UIImage(cgImage: cgimg)
             image = Image(uiImage: uiImage)
+            processedImage = uiImage
         }
     }
     
     func save() {
-        guard let inputImage = inputImage else { return }
+        guard let processedImage = processedImage else { return }
         
         let imageSaver = ImageSaver()
-        imageSaver.writeToPhotoAlbum(image: inputImage)
+        imageSaver.successHandler = {
+            print("Saved image successfully")
+        }
+        imageSaver.errorHandler = {
+            print("Oops: \($0.localizedDescription)")
+        }
+        
+        imageSaver.writeToPhotoAlbum(image: processedImage)
     }
     
     func setFilter(_ filter: CIFilter) {
