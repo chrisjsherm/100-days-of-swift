@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var inputImage: UIImage?
     @State private var filterIntensity = 0.5
     @State private var filterRadius = 100.0
-    @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
+    @State private var currentFilter: CIFilter = CIFilter.circularScreen()
     @State private var showingFilterSheet = false
     @State private var processedImage: UIImage?
     
@@ -29,7 +29,8 @@ struct ContentView: View {
                         .resizable()
                         .scaledToFit()
                     
-                    if (currentFilter.inputKeys.contains(kCIInputIntensityKey)) {
+                    if (currentFilter.inputKeys.contains(kCIInputIntensityKey) ||
+                        !currentFilter.inputKeys.contains(kCIInputRadiusKey)) {
                         Slider(value: $filterIntensity, in: 0.0...1.0)
                             .padding(.top)
                             .onChange(of: filterIntensity) { _ in
@@ -82,6 +83,7 @@ struct ContentView: View {
                 Button("Sepia Tone") { setFilter(CIFilter.sepiaTone()) }
                 Button("Unsharp Mask") { setFilter(CIFilter.unsharpMask()) }
                 Button("Vignette") { setFilter(CIFilter.vignette()) }
+                Button("Circular Screen") { setFilter(CIFilter.circularScreen())}
                 Button("Cancel", role: .cancel) { }
             }
             .onChange(of: inputImage) {
@@ -105,8 +107,18 @@ struct ContentView: View {
         if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey) }
         if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterRadius, forKey: kCIInputRadiusKey) }
         if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey) }
+        if inputKeys.contains(kCIInputWidthKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputWidthKey)}
 
         guard let outputImage = currentFilter.outputImage else {return}
+
+        if inputKeys.contains(kCIInputCenterKey) {
+            let width = (inputImage?.size.width ?? 0.0) / 2.0
+            let height = (inputImage?.size.height ?? 0.0) / 2.0
+            print("Width: \(width)")
+            print("Height: \(height)")
+            let vect = CIVector(x: width, y: height)
+            currentFilter.setValue(vect, forKey: kCIInputCenterKey)
+        }
         
         if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
             let uiImage = UIImage(cgImage: cgimg)
