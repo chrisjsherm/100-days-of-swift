@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var filterIntensity = 0.5
+    @State private var filterRadius = 100.0
     @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
     @State private var showingFilterSheet = false
     @State private var processedImage: UIImage?
@@ -34,6 +35,13 @@ struct ContentView: View {
                             filterImage()
                         }
                     Text("Filter intensity: \(filterIntensity, specifier: "%.1f")")
+                    
+                    Slider(value: $filterRadius, in: 0.0...200.0)
+                        .padding(.top)
+                        .onChange(of: filterRadius) { _ in
+                            filterImage()
+                        }
+                    Text("Radius: \(filterRadius, specifier: "%.1f")")
                     
                     Button("Change filter") {
                         showingFilterSheet = true
@@ -91,7 +99,7 @@ struct ContentView: View {
         let inputKeys = currentFilter.inputKeys
         
         if inputKeys.contains(kCIInputIntensityKey) { currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey) }
-        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey) }
+        if inputKeys.contains(kCIInputRadiusKey) { currentFilter.setValue(filterRadius, forKey: kCIInputRadiusKey) }
         if inputKeys.contains(kCIInputScaleKey) { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey) }
 
         guard let outputImage = currentFilter.outputImage else {return}
