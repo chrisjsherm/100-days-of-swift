@@ -48,14 +48,15 @@ struct ContentView: View {
                     }
                     .padding(.top)
                 } else {
-                    Button("Tap to select a photo") {
-                       showingImagePicker = true
-                    }
-                    .frame(width: 200, height: 300)
+                    Text("Tap to select a photo")
+                    .frame(width: 200, height: 200)
                     .background(Rectangle()
                         .fill(.gray)
                     )
                     .foregroundColor(.white)
+                    .onTapGesture {
+                        showingImagePicker = true
+                    }
                 }
             }
             .sheet(isPresented: $showingImagePicker) {
