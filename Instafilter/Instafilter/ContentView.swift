@@ -29,19 +29,23 @@ struct ContentView: View {
                         .resizable()
                         .scaledToFit()
                     
-                    Slider(value: $filterIntensity, in: 0.0...1.0)
-                        .padding(.top)
-                        .onChange(of: filterIntensity) { _ in
-                            filterImage()
-                        }
-                    Text("Filter intensity: \(filterIntensity, specifier: "%.1f")")
+                    if (currentFilter.inputKeys.contains(kCIInputIntensityKey)) {
+                        Slider(value: $filterIntensity, in: 0.0...1.0)
+                            .padding(.top)
+                            .onChange(of: filterIntensity) { _ in
+                                filterImage()
+                            }
+                        Text("Filter intensity: \(filterIntensity, specifier: "%.1f")")
+                    }
                     
-                    Slider(value: $filterRadius, in: 0.0...200.0)
-                        .padding(.top)
-                        .onChange(of: filterRadius) { _ in
-                            filterImage()
-                        }
-                    Text("Radius: \(filterRadius, specifier: "%.1f")")
+                    if (currentFilter.inputKeys.contains(kCIInputRadiusKey)) {
+                        Slider(value: $filterRadius, in: 0.0...200.0)
+                            .padding(.top)
+                            .onChange(of: filterRadius) { _ in
+                                filterImage()
+                            }
+                        Text("Radius: \(filterRadius, specifier: "%.1f")")
+                    }
                     
                     Button("Change filter") {
                         showingFilterSheet = true
