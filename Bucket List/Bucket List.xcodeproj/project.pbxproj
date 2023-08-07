@@ -16,6 +16,7 @@
 		AA8AE18E2A7D2F47004CECD8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AE18D2A7D2F47004CECD8 /* LoadingView.swift */; };
 		AA8AE1902A7D2F5A004CECD8 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AE18F2A7D2F5A004CECD8 /* SuccessView.swift */; };
 		AA8AE1922A7D2F69004CECD8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AE1912A7D2F69004CECD8 /* ErrorView.swift */; };
+		AAFA7DAE2A812EA0006AE624 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA7DAD2A812EA0006AE624 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		AA8AE18D2A7D2F47004CECD8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AA8AE18F2A7D2F5A004CECD8 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		AA8AE1912A7D2F69004CECD8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		AAFA7DAD2A812EA0006AE624 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				AA8AE18F2A7D2F5A004CECD8 /* SuccessView.swift */,
 				AA8AE1912A7D2F69004CECD8 /* ErrorView.swift */,
 				AA8AE18B2A7D2F25004CECD8 /* EnumLoadingState.swift */,
+				AAFA7DAD2A812EA0006AE624 /* Location.swift */,
 				AA8AE17F2A7D2834004CECD8 /* Assets.xcassets */,
 				AA8AE1812A7D2834004CECD8 /* Preview Content */,
 			);
@@ -154,6 +157,7 @@
 			files = (
 				AA8AE17E2A7D2833004CECD8 /* ContentView.swift in Sources */,
 				AA8AE18C2A7D2F25004CECD8 /* EnumLoadingState.swift in Sources */,
+				AAFA7DAE2A812EA0006AE624 /* Location.swift in Sources */,
 				AA8AE18A2A7D2B7E004CECD8 /* FileManager-Helpers.swift in Sources */,
 				AA8AE18E2A7D2F47004CECD8 /* LoadingView.swift in Sources */,
 				AA8AE1922A7D2F69004CECD8 /* ErrorView.swift in Sources */,
@@ -287,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bucket List/Preview Content\"";
+				DEVELOPMENT_TEAM = T5Z3F7LZ24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -315,6 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bucket List/Preview Content\"";
+				DEVELOPMENT_TEAM = T5Z3F7LZ24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
