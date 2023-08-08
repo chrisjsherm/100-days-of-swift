@@ -14,4 +14,15 @@ struct Location: Identifiable, Codable, Equatable {
     var description: String
     let longitude: Double
     let latitude: Double
+    
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    static func ==(lhs: Location, rhs: Location) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    static let example = Location(id: UUID(), name: "Buckingham Palace", description: "Where Queen Elizabeth lives with her dorgis.", longitude: -0.141, latitude: 51.501)
+
 }
