@@ -17,6 +17,7 @@
 		AA8AE18E2A7D2F47004CECD8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AE18D2A7D2F47004CECD8 /* LoadingView.swift */; };
 		AA8AE1902A7D2F5A004CECD8 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AE18F2A7D2F5A004CECD8 /* SuccessView.swift */; };
 		AA8AE1922A7D2F69004CECD8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AE1912A7D2F69004CECD8 /* ErrorView.swift */; };
+		AAE34D312A83D70800533E1A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE34D302A83D70800533E1A /* Result.swift */; };
 		AAFA7DAE2A812EA0006AE624 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA7DAD2A812EA0006AE624 /* Location.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		AA8AE18D2A7D2F47004CECD8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AA8AE18F2A7D2F5A004CECD8 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		AA8AE1912A7D2F69004CECD8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		AAE34D302A83D70800533E1A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AAFA7DAD2A812EA0006AE624 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 			children = (
 				AA8AE17B2A7D2833004CECD8 /* Bucket_ListApp.swift */,
 				AA8AE17D2A7D2833004CECD8 /* ContentView.swift */,
+				AAE34D302A83D70800533E1A /* Result.swift */,
 				AA0F2C5B2A8283DB0027F84D /* EditView.swift */,
 				AA8AE18D2A7D2F47004CECD8 /* LoadingView.swift */,
 				AA8AE18F2A7D2F5A004CECD8 /* SuccessView.swift */,
@@ -164,6 +167,7 @@
 				AA8AE18A2A7D2B7E004CECD8 /* FileManager-Helpers.swift in Sources */,
 				AA8AE18E2A7D2F47004CECD8 /* LoadingView.swift in Sources */,
 				AA0F2C5C2A8283DB0027F84D /* EditView.swift in Sources */,
+				AAE34D312A83D70800533E1A /* Result.swift in Sources */,
 				AA8AE1922A7D2F69004CECD8 /* ErrorView.swift in Sources */,
 				AA8AE1902A7D2F5A004CECD8 /* SuccessView.swift in Sources */,
 				AA8AE17C2A7D2833004CECD8 /* Bucket_ListApp.swift in Sources */,
