@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA02BEF32A867E3D00A1E246 /* EditView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02BEF22A867E3D00A1E246 /* EditView-ViewModel.swift */; };
 		AA0F2C5C2A8283DB0027F84D /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F2C5B2A8283DB0027F84D /* EditView.swift */; };
 		AA8AE17C2A7D2833004CECD8 /* Bucket_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AE17B2A7D2833004CECD8 /* Bucket_ListApp.swift */; };
 		AA8AE17E2A7D2833004CECD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8AE17D2A7D2833004CECD8 /* ContentView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA02BEF22A867E3D00A1E246 /* EditView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditView-ViewModel.swift"; sourceTree = "<group>"; };
 		AA0F2C5B2A8283DB0027F84D /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		AA8AE1782A7D2832004CECD8 /* Bucket List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bucket List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8AE17B2A7D2833004CECD8 /* Bucket_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket_ListApp.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				AAD959242A85253700AF739A /* ContentView-ViewModel.swift */,
 				AAE34D302A83D70800533E1A /* Result.swift */,
 				AA0F2C5B2A8283DB0027F84D /* EditView.swift */,
+				AA02BEF22A867E3D00A1E246 /* EditView-ViewModel.swift */,
 				AA8AE18D2A7D2F47004CECD8 /* LoadingView.swift */,
 				AA8AE18F2A7D2F5A004CECD8 /* SuccessView.swift */,
 				AA8AE1912A7D2F69004CECD8 /* ErrorView.swift */,
@@ -176,6 +179,7 @@
 				AAD959272A85296300AF739A /* FileManager-DocumentsDirectory.swift in Sources */,
 				AAE34D312A83D70800533E1A /* Result.swift in Sources */,
 				AAD959252A85253700AF739A /* ContentView-ViewModel.swift in Sources */,
+				AA02BEF32A867E3D00A1E246 /* EditView-ViewModel.swift in Sources */,
 				AA8AE1922A7D2F69004CECD8 /* ErrorView.swift in Sources */,
 				AA8AE1902A7D2F5A004CECD8 /* SuccessView.swift in Sources */,
 				AA8AE17C2A7D2833004CECD8 /* Bucket_ListApp.swift in Sources */,

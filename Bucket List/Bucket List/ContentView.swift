@@ -64,9 +64,10 @@ struct ContentView: View {
             }
         }
         .sheet(item: $viewModel.selectedPlace) { place in
-            EditView(location: place) {
-                viewModel.update(location: $0)
-            }
+            EditView(viewModel: EditView.ViewModel(
+                location: place) {
+                    viewModel.update(location: $0)
+                })
         }
         .alert(isPresented: $viewModel.authenticationFailed) {
             Alert(
