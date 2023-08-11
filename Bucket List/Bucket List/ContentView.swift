@@ -68,6 +68,16 @@ struct ContentView: View {
                 viewModel.update(location: $0)
             }
         }
+        .alert(isPresented: $viewModel.authenticationFailed) {
+            Alert(
+                title: Text("Authentication failed"),
+                message: Text(
+                    "Ensure you have given the app permission to use FaceID or TouchID in Settings."),
+                dismissButton: .default(Text("OK"))
+            )
+            
+        }
+        .onAppear(perform: viewModel.authenticate)
     }
 }
 

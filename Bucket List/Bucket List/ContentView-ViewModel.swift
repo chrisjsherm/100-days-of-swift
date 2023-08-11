@@ -15,6 +15,7 @@ extension ContentView {
         @Published private(set) var locations: Array<Location>
         @Published var selectedPlace: Location?
         @Published var isUnlocked = false
+        @Published var authenticationFailed = false
         
         let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")
         
@@ -47,11 +48,15 @@ extension ContentView {
                             self.isUnlocked = true
                         }
                     } else {
-                        // error
+                        Task { @MainActor in
+                            self.authenticationFailed = true
+                        }
                     }
                 }
             } else {
-                // no biometrics
+                Task { @MainActor in
+                    self.authenticationFailed = true
+                }
             }
         }
         
