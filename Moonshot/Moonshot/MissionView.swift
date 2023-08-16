@@ -32,6 +32,7 @@ struct MissionView: View {
                         .frame(maxWidth: geometry.size.width * 0.6)
                         .padding(.top)
                         .padding(.bottom)
+                        .accessibilityLabel("\(mission.displayName) logo")
                     
                     Text("Launched \(mission.formattedLaunchDate)")
                         .font(.caption)
@@ -41,6 +42,7 @@ struct MissionView: View {
                     .frame(height: 2)
                     .foregroundColor(.lightBackground)
                     .padding(.vertical)
+                    .accessibilityHidden(true)
                 
                 CrewScrollView(crew: crew)
                 
@@ -48,6 +50,7 @@ struct MissionView: View {
                     .frame(height: 2)
                     .foregroundColor(.lightBackground)
                     .padding(.vertical)
+                    .accessibilityHidden(true)
                 
                 VStack(alignment: .leading) {
                     Text("Mission Highlights")

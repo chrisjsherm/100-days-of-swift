@@ -29,6 +29,7 @@ struct CrewScrollView: View {
                                     .clipShape(Capsule())
                                     .glow(color: .blue, radius: 20)
                                     .padding()
+                                    .accessibilityLabel("\(crewMember.astronaut.name) profile photo")
 
                                 VStack(alignment: .leading) {
                                     Text(crewMember.astronaut.name)

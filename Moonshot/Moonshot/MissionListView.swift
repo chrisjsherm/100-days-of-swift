@@ -23,6 +23,7 @@ struct MissionListView: View {
                             .scaledToFit()
                             .frame(width: 100, height: 100)
                             .padding()
+                            .accessibilityLabel("\(mission.displayName) logo")
                         
                         VStack(alignment: .leading) {
                             Text(mission.displayName)

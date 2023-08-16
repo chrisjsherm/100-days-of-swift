@@ -26,6 +26,7 @@ struct MissionGridView: View {
                                 .scaledToFit()
                                 .frame(width: 100, height: 100)
                                 .padding()
+                                .accessibilityLabel("\(mission.displayName) logo")
                             
                             VStack {
                                 Text(mission.displayName)
