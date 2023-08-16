@@ -22,10 +22,13 @@ struct ContentView: View {
                                     .font(.headline)
                                 Text(String(describing: item.type))
                             }
+                            .accessibilityLabel(Text("Expense \(item.name) has a value of \(item.amount)"))
+                            .accessibilityHint("Expense type \(String(describing: item.type))")
                             
                             Spacer()
                             Text(item.amount, format: AppConstants.currencyFormat)
                                 .heatified(amount: item.amount)
+                                .accessibilityHidden(true)
                         }
                     }
                     .onDelete(perform: removePersonalItems)
