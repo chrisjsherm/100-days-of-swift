@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showAddContact = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                
+            }
+            .navigationTitle("Rolodex")
+                .toolbar {
+                    Button {
+                        showAddContact = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
         }
-        .padding()
+        .sheet(isPresented: $showAddContact) {
+            AddContactView()
+        }
     }
 }
 
