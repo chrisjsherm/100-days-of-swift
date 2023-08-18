@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddContactView: View {
     @State private var showImagePicker = false
+    @State private var name = ""
     
     @State private var image: Image?
     @State private var inputImage: UIImage?
@@ -20,6 +21,10 @@ struct AddContactView: View {
                     image!
                         .resizable()
                         .scaledToFit()
+                    
+                    Form {
+                        TextField("Name", text: $name)
+                    }
                 } else {
                     Text("Tap to select a profile photo")
                         .frame(
@@ -44,6 +49,11 @@ struct AddContactView: View {
                 loadImage()
             }
             .navigationTitle("Add Contact")
+            .toolbar {
+                Button("Save") {
+                   
+                }
+            }
         }
     }
     
