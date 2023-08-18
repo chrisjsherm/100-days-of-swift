@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AddContactView: View {
+    @Environment(\.managedObjectContext) var context
+    @Environment(\.dismiss) var dismiss
+    
     @State private var showImagePicker = false
     @State private var name = ""
     
@@ -51,7 +54,7 @@ struct AddContactView: View {
             .navigationTitle("Add Contact")
             .toolbar {
                 Button("Save") {
-                   
+                   onSave()
                 }
             }
         }
@@ -61,6 +64,15 @@ struct AddContactView: View {
         guard let inputImage = inputImage else { return }
         
         image = Image(uiImage: inputImage)
+    }
+    
+    func onSave() {
+        let newContact = Contact(context: self.context)
+        newContact.name = name;
+        newContact.photo = inputImage;
+        
+        try? context.save()
+        dismiss()
     }
 }
 

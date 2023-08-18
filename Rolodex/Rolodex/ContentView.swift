@@ -10,10 +10,26 @@ import SwiftUI
 struct ContentView: View {
     @State private var showAddContact = false
     
+    @FetchRequest(sortDescriptors: []) var contacts: FetchedResults<Contact>
+    
     var body: some View {
         NavigationView {
             List {
-                
+                ForEach(contacts) { contact in
+                    NavigationLink {
+                        
+                    } label: {
+                        HStack {
+                            Image(uiImage: contact.wrappedPhoto)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .frame(width: 100, height: 100)
+                            
+                            Text(contact.name ?? "Unknown contact") 
+                        }
+                    }
+                }
             }
             .navigationTitle("Rolodex")
                 .toolbar {

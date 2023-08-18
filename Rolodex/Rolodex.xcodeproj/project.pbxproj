@@ -14,6 +14,8 @@
 		AA02D6432A8EA952006ABA05 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02D6422A8EA952006ABA05 /* ImagePicker.swift */; };
 		AA02D6452A8EAB03006ABA05 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02D6442A8EAB03006ABA05 /* AddContactView.swift */; };
 		AA3E7D312A8FB13C004ED7CC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7D302A8FB13C004ED7CC /* DataController.swift */; };
+		AA3E7D342A8FB274004ED7CC /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7D322A8FB274004ED7CC /* Main.xcdatamodeld */; };
+		AA3E7D362A8FB45D004ED7CC /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7D352A8FB45D004ED7CC /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		AA02D6422A8EA952006ABA05 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AA02D6442A8EAB03006ABA05 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		AA3E7D302A8FB13C004ED7CC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		AA3E7D332A8FB274004ED7CC /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		AA3E7D352A8FB45D004ED7CC /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			children = (
 				AA02D6422A8EA952006ABA05 /* ImagePicker.swift */,
 				AA3E7D302A8FB13C004ED7CC /* DataController.swift */,
+				AA3E7D322A8FB274004ED7CC /* Main.xcdatamodeld */,
 				AA02D6332A8EA907006ABA05 /* Rolodex */,
 				AA02D6322A8EA907006ABA05 /* Products */,
 			);
@@ -62,6 +67,7 @@
 				AA02D6342A8EA907006ABA05 /* RolodexApp.swift */,
 				AA02D6362A8EA907006ABA05 /* ContentView.swift */,
 				AA02D6442A8EAB03006ABA05 /* AddContactView.swift */,
+				AA3E7D352A8FB45D004ED7CC /* Contact.swift */,
 				AA02D6382A8EA908006ABA05 /* Assets.xcassets */,
 				AA02D63A2A8EA908006ABA05 /* Preview Content */,
 			);
@@ -146,11 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3E7D342A8FB274004ED7CC /* Main.xcdatamodeld in Sources */,
 				AA3E7D312A8FB13C004ED7CC /* DataController.swift in Sources */,
 				AA02D6432A8EA952006ABA05 /* ImagePicker.swift in Sources */,
 				AA02D6372A8EA907006ABA05 /* ContentView.swift in Sources */,
 				AA02D6352A8EA907006ABA05 /* RolodexApp.swift in Sources */,
 				AA02D6452A8EAB03006ABA05 /* AddContactView.swift in Sources */,
+				AA3E7D362A8FB45D004ED7CC /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +357,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA3E7D322A8FB274004ED7CC /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA3E7D332A8FB274004ED7CC /* Main.xcdatamodel */,
+			);
+			currentVersion = AA3E7D332A8FB274004ED7CC /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AA02D6292A8EA907006ABA05 /* Project object */;
 }
