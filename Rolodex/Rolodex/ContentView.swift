@@ -17,7 +17,7 @@ struct ContentView: View {
             List {
                 ForEach(contacts) { contact in
                     NavigationLink {
-                        
+                        DetailView(contact: contact)
                     } label: {
                         HStack {                               
                             Image(uiImage: contact.contactPhoto)

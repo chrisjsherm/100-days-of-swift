@@ -16,6 +16,7 @@
 		AA02D6452A8EAB03006ABA05 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02D6442A8EAB03006ABA05 /* AddContactView.swift */; };
 		AA10A1E42A93B479005CC982 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10A1E22A93B479005CC982 /* Person+CoreDataClass.swift */; };
 		AA10A1E52A93B479005CC982 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10A1E32A93B479005CC982 /* Person+CoreDataProperties.swift */; };
+		AA10A1E72A93BB2E005CC982 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10A1E62A93BB2E005CC982 /* DetailView.swift */; };
 		AA3E7D312A8FB13C004ED7CC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7D302A8FB13C004ED7CC /* DataController.swift */; };
 		AA3E7D342A8FB274004ED7CC /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7D322A8FB274004ED7CC /* Main.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		AA02D6442A8EAB03006ABA05 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		AA10A1E22A93B479005CC982 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AA10A1E32A93B479005CC982 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AA10A1E62A93BB2E005CC982 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		AA3E7D302A8FB13C004ED7CC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		AA3E7D332A8FB274004ED7CC /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 			children = (
 				AA02D6342A8EA907006ABA05 /* RolodexApp.swift */,
 				AA02D6362A8EA907006ABA05 /* ContentView.swift */,
+				AA10A1E62A93BB2E005CC982 /* DetailView.swift */,
 				AA02D6442A8EAB03006ABA05 /* AddContactView.swift */,
 				AA02D6382A8EA908006ABA05 /* Assets.xcassets */,
 				AA02D63A2A8EA908006ABA05 /* Preview Content */,
@@ -161,6 +164,7 @@
 				AA10A1E42A93B479005CC982 /* Person+CoreDataClass.swift in Sources */,
 				AA3E7D342A8FB274004ED7CC /* Main.xcdatamodeld in Sources */,
 				AA10A1E52A93B479005CC982 /* Person+CoreDataProperties.swift in Sources */,
+				AA10A1E72A93BB2E005CC982 /* DetailView.swift in Sources */,
 				AA3E7D312A8FB13C004ED7CC /* DataController.swift in Sources */,
 				AA02D6432A8EA952006ABA05 /* ImagePicker.swift in Sources */,
 				AA02D6372A8EA907006ABA05 /* ContentView.swift in Sources */,
