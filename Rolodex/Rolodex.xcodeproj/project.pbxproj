@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA01416A2A93AA0300B30341 /* FileManager-Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0141692A93AA0300B30341 /* FileManager-Helpers.swift */; };
 		AA02D6352A8EA907006ABA05 /* RolodexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02D6342A8EA907006ABA05 /* RolodexApp.swift */; };
 		AA02D6372A8EA907006ABA05 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02D6362A8EA907006ABA05 /* ContentView.swift */; };
 		AA02D6392A8EA908006ABA05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA02D6382A8EA908006ABA05 /* Assets.xcassets */; };
 		AA02D63C2A8EA908006ABA05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA02D63B2A8EA908006ABA05 /* Preview Assets.xcassets */; };
 		AA02D6432A8EA952006ABA05 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02D6422A8EA952006ABA05 /* ImagePicker.swift */; };
 		AA02D6452A8EAB03006ABA05 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02D6442A8EAB03006ABA05 /* AddContactView.swift */; };
+		AA10A1E42A93B479005CC982 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10A1E22A93B479005CC982 /* Person+CoreDataClass.swift */; };
+		AA10A1E52A93B479005CC982 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10A1E32A93B479005CC982 /* Person+CoreDataProperties.swift */; };
 		AA3E7D312A8FB13C004ED7CC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7D302A8FB13C004ED7CC /* DataController.swift */; };
 		AA3E7D342A8FB274004ED7CC /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7D322A8FB274004ED7CC /* Main.xcdatamodeld */; };
-		AA3E7D362A8FB45D004ED7CC /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3E7D352A8FB45D004ED7CC /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA0141692A93AA0300B30341 /* FileManager-Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-Helpers.swift"; sourceTree = "<group>"; };
 		AA02D6312A8EA907006ABA05 /* Rolodex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rolodex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA02D6342A8EA907006ABA05 /* RolodexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolodexApp.swift; sourceTree = "<group>"; };
 		AA02D6362A8EA907006ABA05 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,9 +29,10 @@
 		AA02D63B2A8EA908006ABA05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA02D6422A8EA952006ABA05 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AA02D6442A8EAB03006ABA05 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
+		AA10A1E22A93B479005CC982 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AA10A1E32A93B479005CC982 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AA3E7D302A8FB13C004ED7CC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		AA3E7D332A8FB274004ED7CC /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
-		AA3E7D352A8FB45D004ED7CC /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +49,11 @@
 		AA02D6282A8EA907006ABA05 = {
 			isa = PBXGroup;
 			children = (
+				AA10A1E22A93B479005CC982 /* Person+CoreDataClass.swift */,
+				AA10A1E32A93B479005CC982 /* Person+CoreDataProperties.swift */,
 				AA02D6422A8EA952006ABA05 /* ImagePicker.swift */,
 				AA3E7D302A8FB13C004ED7CC /* DataController.swift */,
+				AA0141692A93AA0300B30341 /* FileManager-Helpers.swift */,
 				AA3E7D322A8FB274004ED7CC /* Main.xcdatamodeld */,
 				AA02D6332A8EA907006ABA05 /* Rolodex */,
 				AA02D6322A8EA907006ABA05 /* Products */,
@@ -67,7 +74,6 @@
 				AA02D6342A8EA907006ABA05 /* RolodexApp.swift */,
 				AA02D6362A8EA907006ABA05 /* ContentView.swift */,
 				AA02D6442A8EAB03006ABA05 /* AddContactView.swift */,
-				AA3E7D352A8FB45D004ED7CC /* Contact.swift */,
 				AA02D6382A8EA908006ABA05 /* Assets.xcassets */,
 				AA02D63A2A8EA908006ABA05 /* Preview Content */,
 			);
@@ -152,13 +158,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA10A1E42A93B479005CC982 /* Person+CoreDataClass.swift in Sources */,
 				AA3E7D342A8FB274004ED7CC /* Main.xcdatamodeld in Sources */,
+				AA10A1E52A93B479005CC982 /* Person+CoreDataProperties.swift in Sources */,
 				AA3E7D312A8FB13C004ED7CC /* DataController.swift in Sources */,
 				AA02D6432A8EA952006ABA05 /* ImagePicker.swift in Sources */,
 				AA02D6372A8EA907006ABA05 /* ContentView.swift in Sources */,
 				AA02D6352A8EA907006ABA05 /* RolodexApp.swift in Sources */,
 				AA02D6452A8EAB03006ABA05 /* AddContactView.swift in Sources */,
-				AA3E7D362A8FB45D004ED7CC /* Contact.swift in Sources */,
+				AA01416A2A93AA0300B30341 /* FileManager-Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Rolodex/Preview Content\"";
+				DEVELOPMENT_TEAM = T5Z3F7LZ24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -315,6 +324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Rolodex/Preview Content\"";
+				DEVELOPMENT_TEAM = T5Z3F7LZ24;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

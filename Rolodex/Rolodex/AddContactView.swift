@@ -13,6 +13,7 @@ struct AddContactView: View {
     
     @State private var showImagePicker = false
     @State private var name = ""
+    @State private var showInvalidFormMessage = false
     
     @State private var image: Image?
     @State private var inputImage: UIImage?
@@ -57,6 +58,13 @@ struct AddContactView: View {
                    onSave()
                 }
             }
+            .alert(isPresented: $showInvalidFormMessage) {
+                Alert(
+                    title: Text("Error"),
+                    message: Text("Please select a photo and enter a name for this contact."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
     }
     
@@ -67,12 +75,53 @@ struct AddContactView: View {
     }
     
     func onSave() {
-        let newContact = Contact(context: self.context)
-        newContact.name = name;
-        newContact.photo = inputImage;
+        guard let validatedName = validateName(name: name) else {
+            showInvalidFormMessage = true
+            return
+        }
+        
+        let newContact = Person(context: self.context)
+        newContact.name = validatedName;
+        
+        guard let contactImage = inputImage else {
+            showInvalidFormMessage = true
+            return
+        }
+    
+        let uuid = UUID()
+        let fileName = "\(uuid.uuidString).jpg"
+        let fileURL = getDocumentsDirectory().appendingPathComponent(fileName)
+        
+        do {
+            if let data = contactImage.jpegData(compressionQuality:  1),
+                !FileManager.default.fileExists(atPath: fileURL.path) {
+                // writes the image data to disk
+                try data.write(to: fileURL)
+                print("file saved")
+            }
+        } catch {
+            print("Error: ", error.localizedDescription)
+        }
+        
+        newContact.photoId = uuid;
         
         try? context.save()
         dismiss()
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    private func validateName(name: String) -> String? {
+        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if trimmedName.count > 0 {
+            return trimmedName
+        }
+        
+        return nil
     }
 }
 

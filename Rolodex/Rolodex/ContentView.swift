@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var showAddContact = false
     
-    @FetchRequest(sortDescriptors: []) var contacts: FetchedResults<Contact>
+    @FetchRequest(sortDescriptors: []) var contacts: FetchedResults<Person>
     
     var body: some View {
         NavigationView {
@@ -19,8 +19,8 @@ struct ContentView: View {
                     NavigationLink {
                         
                     } label: {
-                        HStack {
-                            Image(uiImage: contact.wrappedPhoto)
+                        HStack {                               
+                            Image(uiImage: contact.contactPhoto)
                                 .resizable()
                                 .scaledToFit()
                                 .clipShape(Circle())
