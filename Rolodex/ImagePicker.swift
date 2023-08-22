@@ -13,7 +13,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
-        var config = PHPickerConfiguration()
+        var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
         config.filter = .images
 
         let picker = PHPickerViewController(configuration: config)
@@ -34,8 +34,20 @@ struct ImagePicker: UIViewControllerRepresentable {
             picker.dismiss(animated: true)
 
             // Exit if no selection was made
-            guard let provider = results.first?.itemProvider else { return }
+            guard let imageResult = results.first else { return }
+            
+            let provider = imageResult.itemProvider
+            print("Loading photo")
 
+            // Get the location information from the image.
+            if let assetId = imageResult.assetIdentifier {
+                let assetResults = PHAsset.fetchAssets(withLocalIdentifiers: [assetId], options: nil)
+                
+                print(assetResults.firstObject?.location?.coordinate ?? "No location")
+            } else {
+                print("No asset identifier")
+            }
+            
             // If this has an image we can use, use it
             if provider.canLoadObject(ofClass: UIImage.self) {
                 provider.loadObject(ofClass: UIImage.self) { image, _ in

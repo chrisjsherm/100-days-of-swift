@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Photos
 
 struct DetailView: View {
     let contact: Person
@@ -22,6 +23,11 @@ struct DetailView: View {
             alignment: .top
         ) // Align To top
         .navigationTitle(contact.name ?? "Unknown contact")
+        .onAppear() {
+            PHPhotoLibrary.requestAuthorization { (status) in
+               // No crash
+            }
+        }
     }
 }
 
