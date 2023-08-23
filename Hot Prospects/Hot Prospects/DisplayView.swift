@@ -11,7 +11,10 @@ struct DisplayView: View {
     @EnvironmentObject var user: User
     
     var body: some View {
-        Text(user.name)
+        NavigationView {
+            Text(user.name)
+                .navigationTitle("Display")
+        }
     }
 }
 

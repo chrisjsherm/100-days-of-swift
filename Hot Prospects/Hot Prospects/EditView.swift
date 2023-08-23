@@ -11,7 +11,12 @@ struct EditView: View {
     @EnvironmentObject var user: User
     
     var body: some View {
-        TextField("Name", text: $user.name)
+        NavigationView {
+            Form {
+                TextField("Name", text: $user.name)
+            }
+            .navigationTitle("Edit")
+        }
     }
 }
 
