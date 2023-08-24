@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA6AB8B32A979AF600E09B8C /* DelayedUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AB8B22A979AF600E09B8C /* DelayedUpdater.swift */; };
 		AA94B5D42A96478E005FAEF9 /* Hot_ProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94B5D32A96478E005FAEF9 /* Hot_ProspectsApp.swift */; };
 		AA94B5D62A96478E005FAEF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94B5D52A96478E005FAEF9 /* ContentView.swift */; };
 		AA94B5D82A964790005FAEF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA94B5D72A964790005FAEF9 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA6AB8B22A979AF600E09B8C /* DelayedUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedUpdater.swift; sourceTree = "<group>"; };
 		AA94B5D02A96478E005FAEF9 /* Hot Prospects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hot Prospects.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA94B5D32A96478E005FAEF9 /* Hot_ProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hot_ProspectsApp.swift; sourceTree = "<group>"; };
 		AA94B5D52A96478E005FAEF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				AA94B5D52A96478E005FAEF9 /* ContentView.swift */,
 				AA94B5E32A96492B005FAEF9 /* EditView.swift */,
 				AA94B5E52A964957005FAEF9 /* DisplayView.swift */,
+				AA6AB8B22A979AF600E09B8C /* DelayedUpdater.swift */,
 				AA94B5E12A96490D005FAEF9 /* User.swift */,
 				AA94B5D72A964790005FAEF9 /* Assets.xcassets */,
 				AA94B5D92A964790005FAEF9 /* Preview Content */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6AB8B32A979AF600E09B8C /* DelayedUpdater.swift in Sources */,
 				AA94B5D62A96478E005FAEF9 /* ContentView.swift in Sources */,
 				AA94B5D42A96478E005FAEF9 /* Hot_ProspectsApp.swift in Sources */,
 				AA94B5E42A96492B005FAEF9 /* EditView.swift in Sources */,

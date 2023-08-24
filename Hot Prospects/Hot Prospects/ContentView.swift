@@ -8,26 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var user = User()
-    @State private var selectedTab = "One"
-    
-    var body: some View {
-        VStack {
-            TabView(selection: $selectedTab) {
-                EditView()
-                    .tabItem {
-                        Label("Edit", systemImage: "pencil")
-                    }
-                    .tag("One")
+    @StateObject var updater = DelayedUpdater()
 
-                DisplayView()
-                    .tabItem {
-                        Label("Display", systemImage: "note")
-                    }
-                    .tag("Two")
-            }
-        }
-        .environmentObject(user)
+    var body: some View {
+        Text("Value is: \(updater.value)")
     }
 }
 
