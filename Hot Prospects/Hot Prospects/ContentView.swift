@@ -8,15 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Image("example")
-            .interpolation(.none)
-            .resizable()
-            .scaledToFit()
-            .frame(maxHeight: .infinity)
-            .background(.black)
-            .ignoresSafeArea()
-    }
+    @State private var backgroundColor = Color.red
+
+        var body: some View {
+            VStack {
+                Text("Hello, World!")
+                    .padding()
+                    .background(backgroundColor)
+
+                Text("Change Color")
+                    .padding()
+                    .contextMenu {
+                        Button("Red") {
+                            backgroundColor = .red
+                        }
+
+                        Button("Green") {
+                            backgroundColor = .green
+                        }
+
+                        Button("Blue") {
+                            backgroundColor = .blue
+                        }
+                    }
+            }
+        }
 }
 
 struct ContentView_Previews: PreviewProvider {
