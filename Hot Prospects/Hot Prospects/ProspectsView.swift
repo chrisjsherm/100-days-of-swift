@@ -10,6 +10,22 @@ import SwiftUI
 struct ProspectsView: View {
     @EnvironmentObject var prospects: Prospects
     let filter: FilterType
+    var filteredProspects: [Prospect] {
+        switch filter {
+        case .none:
+            return prospects.people
+            
+        case .contacted:
+            return prospects.people.filter {
+                $0.isContacted
+            }
+            
+        case .uncontacted:
+            return prospects.people.filter {
+                !$0.isContacted
+            }
+        }
+    }
     
     var title: String {
         switch filter {
@@ -26,7 +42,16 @@ struct ProspectsView: View {
     
     var body: some View {
         NavigationView {
-            Text("People: \(prospects.people.count)")
+            List {
+                ForEach(filteredProspects) { prospect in
+                    VStack(alignment: .leading) {
+                        Text(prospect.name)
+                            .font(.headline)
+                        Text(prospect.emailAddress)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
                 .navigationTitle(title)
                 .toolbar {
                     Button {
