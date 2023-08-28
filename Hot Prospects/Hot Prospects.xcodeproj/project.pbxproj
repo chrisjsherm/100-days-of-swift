@@ -11,6 +11,7 @@
 		AA6AB8B32A979AF600E09B8C /* DelayedUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AB8B22A979AF600E09B8C /* DelayedUpdater.swift */; };
 		AA71CAEF2A9CDF680042A348 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA71CAEE2A9CDF680042A348 /* ProspectsView.swift */; };
 		AA71CAF12A9CDF730042A348 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA71CAF02A9CDF730042A348 /* MeView.swift */; };
+		AA71CAF32A9CE2AF0042A348 /* ProspectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA71CAF22A9CE2AF0042A348 /* ProspectModel.swift */; };
 		AA94B5D42A96478E005FAEF9 /* Hot_ProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94B5D32A96478E005FAEF9 /* Hot_ProspectsApp.swift */; };
 		AA94B5D62A96478E005FAEF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94B5D52A96478E005FAEF9 /* ContentView.swift */; };
 		AA94B5D82A964790005FAEF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA94B5D72A964790005FAEF9 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		AA6AB8B22A979AF600E09B8C /* DelayedUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedUpdater.swift; sourceTree = "<group>"; };
 		AA71CAEE2A9CDF680042A348 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		AA71CAF02A9CDF730042A348 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		AA71CAF22A9CE2AF0042A348 /* ProspectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectModel.swift; sourceTree = "<group>"; };
 		AA94B5D02A96478E005FAEF9 /* Hot Prospects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hot Prospects.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA94B5D32A96478E005FAEF9 /* Hot_ProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hot_ProspectsApp.swift; sourceTree = "<group>"; };
 		AA94B5D52A96478E005FAEF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 		AA94B5C72A96478E005FAEF9 = {
 			isa = PBXGroup;
 			children = (
+				AA71CAF22A9CE2AF0042A348 /* ProspectModel.swift */,
 				AA94B5D22A96478E005FAEF9 /* Hot Prospects */,
 				AA94B5D12A96478E005FAEF9 /* Products */,
 			);
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6AB8B32A979AF600E09B8C /* DelayedUpdater.swift in Sources */,
+				AA71CAF32A9CE2AF0042A348 /* ProspectModel.swift in Sources */,
 				AA94B5D62A96478E005FAEF9 /* ContentView.swift in Sources */,
 				AA94B5D42A96478E005FAEF9 /* Hot_ProspectsApp.swift in Sources */,
 				AA71CAEF2A9CDF680042A348 /* ProspectsView.swift in Sources */,

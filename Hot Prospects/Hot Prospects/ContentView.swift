@@ -10,6 +10,7 @@ import UserNotifications
 import SamplePackage
 
 struct ContentView: View {
+    @StateObject var prospects = Prospects()
     let possibleNumbers = Array(1...60)
     var results: String {
         let selected = possibleNumbers.random(7).sorted()
@@ -36,6 +37,8 @@ struct ContentView: View {
                     Label("Me", systemImage: "person.crop.square")
                 }
         }
+        .environmentObject(prospects)
+        
     }
 }
 

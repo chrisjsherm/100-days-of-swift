@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProspectsView: View {
+    @EnvironmentObject var prospects: Prospects
     let filter: FilterType
     
     var title: String {
@@ -25,15 +26,28 @@ struct ProspectsView: View {
     
     var body: some View {
         NavigationView {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text("People: \(prospects.people.count)")
                 .navigationTitle(title)
+                .toolbar {
+                    Button {
+                        let prospect = Prospect()
+                        prospect.name = "Paul Hudson"
+                        prospect.emailAddress = "paul@hackingwithswift.com"
+                        prospects.people.append(prospect)
+                    } label: {
+                        Label("Scan", systemImage: "qrcode.viewfinder")
+                    }
+                }
         }
     }
 }
 
 struct ProspectsView_Previews: PreviewProvider {
+    @StateObject static var prospects = Prospects()
+    
     static var previews: some View {
         ProspectsView(filter: .none)
+            .environmentObject(prospects)
     }
 }
 
