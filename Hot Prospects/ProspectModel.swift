@@ -20,4 +20,9 @@ class Prospect: Identifiable, Codable {
     init() {
         self.people = []
     }
+    
+    func toggleIsContacted(_ prospect: Prospect) {
+        objectWillChange.send()
+        prospect.isContacted.toggle()
+    }
 }
