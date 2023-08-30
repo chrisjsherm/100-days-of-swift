@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CodeScanner
+import UserNotifications
 
 struct ProspectsView: View {
     @State private var isShowingScanner = false
@@ -67,6 +68,13 @@ struct ProspectsView: View {
                                 Label("Mark Contacted", systemImage: "person.crop.circle.fill.badge.checkmark")
                             }
                             .tint(.green)
+                            
+                            Button {
+                                addNotification(for: prospect)
+                            } label: {
+                                Label("Remind Me", systemImage: "bell")
+                            }
+                            .tint(.orange)
                         }
                     }
                 }
@@ -86,7 +94,45 @@ struct ProspectsView: View {
                 }
         }
     }
-    
+
+    func addNotification(for prospect: Prospect) {
+        let center = UNUserNotificationCenter.current()
+
+        let addRequest = {
+            let content = UNMutableNotificationContent()
+            content.title = "Contact \(prospect.name)"
+            content.subtitle = prospect.emailAddress
+            content.sound = UNNotificationSound.default
+
+            var dateComponents = DateComponents()
+            dateComponents.hour = 9
+            let nineAMTrigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            
+            let oneMinTrigger = UNTimeIntervalNotificationTrigger(
+                timeInterval: 1, repeats: false
+            )
+
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: oneMinTrigger)
+            center.add(request)
+        }
+
+        center.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized {
+                addRequest()
+                print("Request scheduled.")
+            } else {
+                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        addRequest()
+                        print("Request scheduled.")
+                    } else {
+                        print("D'oh! Notification Center access was not granted by the user.")
+                    }
+                }
+            }
+        }
+    }
+
     func onScan(result: Result<ScanResult, ScanError>) {
         isShowingScanner = false
         
