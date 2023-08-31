@@ -29,7 +29,7 @@ struct ProspectsView: View {
             }
         }
     }
-    
+        
     var title: String {
         switch filter {
         case .none:
@@ -42,6 +42,8 @@ struct ProspectsView: View {
             return "Uncontacted people"
         }
     }
+    
+    @State private var showingSortMenu = false
     
     var body: some View {
         NavigationView {
@@ -89,6 +91,12 @@ struct ProspectsView: View {
                 .navigationTitle(title)
                 .toolbar {
                     Button {
+                        showingSortMenu = true
+                    } label: {
+                        Label("Sort", systemImage: "arrow.up.arrow.down")
+                    }
+                    
+                    Button {
                         isShowingScanner = true
                     } label: {
                         Label("Scan", systemImage: "qrcode.viewfinder")
@@ -98,6 +106,19 @@ struct ProspectsView: View {
                     CodeScannerView(codeTypes: [.qr],
                         simulatedData: "Paul Hudson\npaul@hackingwithswift.com",
                         completion: onScan)
+                }
+                .confirmationDialog("Sort", isPresented: $showingSortMenu) {
+                    Button {
+                        prospects.sortOrder = ProspectsSortOrder.NameAsc
+                    } label: {
+                       Text("Name Ascending")
+                    }
+                    
+                    Button {
+                        prospects.sortOrder = ProspectsSortOrder.NameDesc
+                    } label: {
+                        Text("Name Descending")
+                    }
                 }
         }
     }

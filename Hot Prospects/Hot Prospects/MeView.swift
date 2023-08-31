@@ -40,6 +40,7 @@ struct MeView: View {
                     .contextMenu {
                         Button {
                             let image = generateQRCode(from: qrValue)
+                            
                             imageSaver.writeToPhotoAlbum(image: image)
                         } label: {
                             Label("Save to Photos", systemImage: "square.and.arrow.down")
@@ -62,7 +63,7 @@ struct MeView: View {
 
         if let outputImage = filter.outputImage {
             if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
-                return UIImage(cgImage: cgimg)
+                return UIImage(cgImage: cgimg).resized(toWidth: 512) ?? UIImage()
             }
         }
 
