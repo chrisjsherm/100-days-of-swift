@@ -20,6 +20,7 @@
 		AA94B5E22A96490D005FAEF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94B5E12A96490D005FAEF9 /* User.swift */; };
 		AA94B5E42A96492B005FAEF9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94B5E32A96492B005FAEF9 /* EditView.swift */; };
 		AA94B5E62A964957005FAEF9 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94B5E52A964957005FAEF9 /* DisplayView.swift */; };
+		AA9F78362AA0E26500F809E6 /* FileManager-Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9F78352AA0E26500F809E6 /* FileManager-Helpers.swift */; };
 		AAF99C492A9F8C8200630122 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF99C482A9F8C8200630122 /* ImageSaver.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		AA94B5E12A96490D005FAEF9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA94B5E32A96492B005FAEF9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		AA94B5E52A964957005FAEF9 /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
+		AA9F78352AA0E26500F809E6 /* FileManager-Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-Helpers.swift"; sourceTree = "<group>"; };
 		AAF99C482A9F8C8200630122 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 			children = (
 				AAF99C482A9F8C8200630122 /* ImageSaver.swift */,
 				AA71CAF22A9CE2AF0042A348 /* ProspectModel.swift */,
+				AA9F78352AA0E26500F809E6 /* FileManager-Helpers.swift */,
 				AA94B5D22A96478E005FAEF9 /* Hot Prospects */,
 				AA94B5D12A96478E005FAEF9 /* Products */,
 			);
@@ -177,6 +180,7 @@
 				AA71CAF32A9CE2AF0042A348 /* ProspectModel.swift in Sources */,
 				AA94B5D62A96478E005FAEF9 /* ContentView.swift in Sources */,
 				AA94B5D42A96478E005FAEF9 /* Hot_ProspectsApp.swift in Sources */,
+				AA9F78362AA0E26500F809E6 /* FileManager-Helpers.swift in Sources */,
 				AA71CAEF2A9CDF680042A348 /* ProspectsView.swift in Sources */,
 				AA71CAF12A9CDF730042A348 /* MeView.swift in Sources */,
 				AA94B5E42A96492B005FAEF9 /* EditView.swift in Sources */,

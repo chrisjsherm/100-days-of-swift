@@ -15,12 +15,18 @@ class Prospect: Identifiable, Codable {
 }
 
 @MainActor class Prospects: ObservableObject {
-    @Published private(set) var people: [Prospect]
+    @Published private(set) var people: [Prospect] = []
     
-    private let USER_DEFAULTS_KEY = "SavedData"
+    private let DATA_FILE_NAME = "SavedData"
+    private var fileURL: URL {
+        let fileURL = FileManager.documentsDirectory.appendingPathComponent(
+            "DATA_FILE_NAME"
+        )
+        return fileURL
+    }
 
     init() {
-        if let data = UserDefaults.standard.data(forKey: USER_DEFAULTS_KEY) {
+        if let data = try? Data(contentsOf: fileURL) {
             if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
                 people = decoded
                 return
@@ -43,7 +49,11 @@ class Prospect: Identifiable, Codable {
     
     private func save() {
         if let encoded = try? JSONEncoder().encode(people) {
-            UserDefaults.standard.set(encoded, forKey: USER_DEFAULTS_KEY)
+            do {
+                try encoded.write(to: fileURL)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }
