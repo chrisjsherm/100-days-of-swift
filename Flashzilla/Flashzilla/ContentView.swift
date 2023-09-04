@@ -9,18 +9,14 @@ import SwiftUI
 import CoreHaptics
 
 struct ContentView: View {
-    @Environment(\.scenePhase) var scenePhase
+    @State private var scale = 1.0
 
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-            .onChange(of: scenePhase) { newPhase in
-                if newPhase == .active {
-                    print("Active")
-                } else if newPhase == .inactive {
-                    print("Inactive")
-                } else if newPhase == .background {
-                    print("Background")
+        Text("Hello, World!")
+            .scaleEffect(scale)
+            .onTapGesture {
+                withOptionalAnimation {
+                    scale *= 1.5
                 }
             }
     }

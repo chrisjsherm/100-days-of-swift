@@ -11,6 +11,7 @@
 		AA1671B02AA22E69000CFCA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1671AF2AA22E69000CFCA6 /* ContentView.swift */; };
 		AA1671B22AA22E6A000CFCA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1671B12AA22E6A000CFCA6 /* Assets.xcassets */; };
 		AA1671B52AA22E6A000CFCA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1671B42AA22E6A000CFCA6 /* Preview Assets.xcassets */; };
+		AA36385C2AA653A2004FA2B4 /* Helper-withOptionalAnimationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36385B2AA653A2004FA2B4 /* Helper-withOptionalAnimationWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AA1671AF2AA22E69000CFCA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA1671B12AA22E6A000CFCA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1671B42AA22E6A000CFCA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA36385B2AA653A2004FA2B4 /* Helper-withOptionalAnimationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper-withOptionalAnimationWrapper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 		AA1671A12AA22E69000CFCA6 = {
 			isa = PBXGroup;
 			children = (
+				AA36385B2AA653A2004FA2B4 /* Helper-withOptionalAnimationWrapper.swift */,
 				AA1671AC2AA22E69000CFCA6 /* Flashzilla */,
 				AA1671AB2AA22E69000CFCA6 /* Products */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				AA1671B02AA22E69000CFCA6 /* ContentView.swift in Sources */,
 				AA1671AE2AA22E69000CFCA6 /* FlashzillaApp.swift in Sources */,
+				AA36385C2AA653A2004FA2B4 /* Helper-withOptionalAnimationWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
