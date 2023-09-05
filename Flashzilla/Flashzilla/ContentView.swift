@@ -9,16 +9,31 @@ import SwiftUI
 import CoreHaptics
 
 struct ContentView: View {
-    @State private var scale = 1.0
-
+    @State private var cards = [Card](repeating: Card.example, count: 10)
+    
     var body: some View {
-        Text("Hello, World!")
-            .scaleEffect(scale)
-            .onTapGesture {
-                withOptionalAnimation {
-                    scale *= 1.5
+        ZStack {
+            Image("background")
+                .resizable()
+                .ignoresSafeArea()
+            
+            VStack {
+                ZStack {
+                    ForEach(0..<cards.count, id: \.self) { index in
+                        CardView(card: cards[index]) {
+                            withAnimation {
+                                removeCard(at: index)
+                            }
+                        }
+                            .stacked(at: index, in: cards.count)
+                    }
                 }
             }
+        }
+    }
+    
+    func removeCard(at index: Int) {
+        cards.remove(at: index)
     }
 }
 
