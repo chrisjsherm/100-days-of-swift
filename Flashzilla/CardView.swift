@@ -12,7 +12,7 @@ struct CardView: View {
 
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
-
+   
     let card: Card
     var removal: (() -> Void)? = nil
 
