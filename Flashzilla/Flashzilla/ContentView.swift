@@ -11,7 +11,8 @@ import CoreHaptics
 struct ContentView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.scenePhase) var scenePhase
-    
+    @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
+
     @State private var cards = [Card](repeating: Card.example, count: 10)
     @State private var timeRemaining = 100
     @State private var isActive = true
@@ -56,7 +57,7 @@ struct ContentView: View {
                 }
             }
             
-            if differentiateWithoutColor {
+            if differentiateWithoutColor || voiceOverEnabled {
                 VStack {
                     Spacer()
 
