@@ -14,7 +14,7 @@ struct ContentView: View {
     @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
 
     @State private var showingEditScreen = false
-    @State private var cards = [Card](repeating: Card.example, count: 10)
+    @State private var cards = [Card]()
     @State private var timeRemaining = 100
     @State private var isActive = true
     
@@ -129,7 +129,17 @@ struct ContentView: View {
             } else {
                 isActive = false
             }
-        } 
+        }
+        .sheet(isPresented: $showingEditScreen, onDismiss: resetCards, content: EditCards.init)
+        .onAppear(perform: resetCards)
+    }
+
+    func loadData() {
+        if let data = UserDefaults.standard.data(forKey: "Cards") {
+            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
+                cards = decoded
+            }
+        }
     }
     
     func removeCard(at index: Int) {
@@ -142,9 +152,9 @@ struct ContentView: View {
     }
     
     func resetCards() {
-        cards = [Card](repeating: Card.example, count: 10)
+        loadData()
         timeRemaining = 100
-        isActive = true
+        isActive = true        
     }
 }
 
