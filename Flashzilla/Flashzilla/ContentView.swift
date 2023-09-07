@@ -90,7 +90,7 @@ struct ContentView: View {
             } else {
                 isActive = false
             }
-        }
+        } 
     }
     
     func removeCard(at index: Int) {
