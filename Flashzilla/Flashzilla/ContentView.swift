@@ -13,6 +13,7 @@ struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
 
+    @State private var showingEditScreen = false
     @State private var cards = [Card](repeating: Card.example, count: 10)
     @State private var timeRemaining = 100
     @State private var isActive = true
@@ -56,6 +57,26 @@ struct ContentView: View {
                         .clipShape(Capsule())
                 }
             }
+
+            VStack {
+                HStack {
+                    Spacer()
+
+                    Button {
+                        showingEditScreen = true
+                    } label: {
+                        Image(systemName: "plus.circle")
+                            .padding()
+                            .background(.black.opacity(0.7))
+                            .clipShape(Circle())
+                    }
+                }
+
+                Spacer()
+            }
+            .foregroundColor(.white)
+            .font(.largeTitle)
+            .padding()
             
             if differentiateWithoutColor || voiceOverEnabled {
                 VStack {
