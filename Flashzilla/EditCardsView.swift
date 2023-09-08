@@ -12,12 +12,18 @@ struct EditCards: View {
     @State private var cards = [Card]()
     @State private var newPrompt = ""
     @State private var newAnswer = ""
+    @FocusState private var focusedField: FocusedField?
+    
+    private enum FocusedField {
+        case prompt, answer
+    }
 
     var body: some View {
         NavigationView {
             List {
                 Section("Add new card") {
                     TextField("Prompt", text: $newPrompt)
+                        .focused($focusedField, equals: .prompt)
                     TextField("Answer", text: $newAnswer)
                     Button("Add card", action: addCard)
                 }
@@ -53,6 +59,7 @@ struct EditCards: View {
                 cards = decoded
             }
         }
+        focusedField = .prompt
     }
 
     func saveData() {
@@ -69,6 +76,10 @@ struct EditCards: View {
         let card = Card(prompt: trimmedPrompt, answer: trimmedAnswer)
         cards.insert(card, at: 0)
         saveData()
+        
+        newPrompt = ""
+        newAnswer = ""
+        focusedField = .prompt
     }
 
     func removeCards(at offsets: IndexSet) {
