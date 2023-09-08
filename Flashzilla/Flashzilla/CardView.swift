@@ -16,7 +16,7 @@ struct CardView: View {
     @State private var offset = CGSize.zero
    
     let card: Card
-    var removal: (() -> Void)? = nil
+    var removal: (Bool) -> Void
     
     private let dragThreshold = 50.0;
 
@@ -77,11 +77,14 @@ struct CardView: View {
                     if abs(offset.width) > dragThreshold {
                         if offset.width > 0 {
                             feedback.notificationOccurred(.success)
+                            removal(false)
+                            print("Remove sucess")
                         } else {
                             feedback.notificationOccurred(.error)
+                            removal(true)
+                            print("Remove failure")
                         }
-
-                        removal?()
+                        
                     } else {
                         offset = .zero
                     }
@@ -90,8 +93,3 @@ struct CardView: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(card: Card.example)
-    }
-}

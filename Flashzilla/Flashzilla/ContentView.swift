@@ -36,10 +36,10 @@ struct ContentView: View {
                     .clipShape(Capsule())
                 
                 ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: cards[index]) {
+                    ForEachWithIndex(data: cards) { index, card in
+                        CardView(card: card){ addBack in
                             withAnimation {
-                                removeCard(at: index)
+                                removeCard(at: index)(addBack)
                             }
                         }
                             .stacked(at: index, in: cards.count)
@@ -85,7 +85,7 @@ struct ContentView: View {
                     HStack {
                         Button {
                             withAnimation {
-                                removeCard(at: cards.count - 1)
+                                removeCard(at: cards.count - 1)(true)
                             }
                         } label: {
                             Image(systemName: "xmark.circle")
@@ -100,7 +100,7 @@ struct ContentView: View {
 
                         Button {
                             withAnimation {
-                                removeCard(at: cards.count - 1)
+                                removeCard(at: cards.count - 1)(false)
                             }
                         } label: {
                             Image(systemName: "checkmark.circle")
@@ -142,13 +142,23 @@ struct ContentView: View {
         }
     }
     
-    func removeCard(at index: Int) {
-        guard index >= 0 else { return }
-        cards.remove(at: index)
+    func removeCard(at index: Int) -> (Bool) -> Void {
         
-        if cards.isEmpty {
-            isActive = false
+        func callback(_ addBack: Bool = false) {
+            var removedCard = cards.remove(at: index)
+            
+            if addBack && cards.count != 0 {
+                // Update id so ForEach can differentiate it.
+                removedCard.id = UUID()
+                cards.insert(removedCard, at: 0)
+            }
+            
+            if cards.isEmpty {
+                isActive = false
+            }
         }
+        
+        return callback
     }
     
     func resetCards() {
