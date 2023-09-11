@@ -11,6 +11,7 @@
 		AAF4638D2AAF3E9800EB064B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF4638C2AAF3E9800EB064B /* ContentView.swift */; };
 		AAF4638F2AAF3E9900EB064B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF4638E2AAF3E9900EB064B /* Assets.xcassets */; };
 		AAF463922AAF3E9900EB064B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF463912AAF3E9900EB064B /* Preview Assets.xcassets */; };
+		AAF463992AAF470D00EB064B /* Extension-VerticalAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF463982AAF470D00EB064B /* Extension-VerticalAlignment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AAF4638C2AAF3E9800EB064B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AAF4638E2AAF3E9900EB064B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAF463912AAF3E9900EB064B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AAF463982AAF470D00EB064B /* Extension-VerticalAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-VerticalAlignment.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				AAF4638A2AAF3E9800EB064B /* LayoutAndGeometryApp.swift */,
 				AAF4638C2AAF3E9800EB064B /* ContentView.swift */,
+				AAF463982AAF470D00EB064B /* Extension-VerticalAlignment.swift */,
 				AAF4638E2AAF3E9900EB064B /* Assets.xcassets */,
 				AAF463902AAF3E9900EB064B /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF463992AAF470D00EB064B /* Extension-VerticalAlignment.swift in Sources */,
 				AAF4638D2AAF3E9800EB064B /* ContentView.swift in Sources */,
 				AAF4638B2AAF3E9800EB064B /* LayoutAndGeometryApp.swift in Sources */,
 			);
