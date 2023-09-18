@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedUser: User? = nil
+    @Environment(\.horizontalSizeClass) var sizeClass
 
     var body: some View {
-        Text("Hello, World!")
-            .onTapGesture {
-                selectedUser = User()
-            }
-            .sheet(item: $selectedUser) { user in
-                Text(user.id)
-            }
+        if sizeClass == .compact {
+            VStack(content: UserView.init)
+        } else {
+            HStack(content: UserView.init)
+        }
     }
 }
 
-struct User: Identifiable {
-    var id = "Taylor Swift"
+struct UserView: View {
+    var body: some View {
+        Group {
+            Text("Name: Paul")
+            Text("Country: England")
+            Text("Pets: Luna and Arya")
+        }
+        .font(.title)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
