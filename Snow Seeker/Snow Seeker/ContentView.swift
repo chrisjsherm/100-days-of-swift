@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        NavigationView {
-            NavigationLink {
-                Text("New secondary")
-            } label: {
-                Text("Hello, World!")
-            }
-            .navigationTitle("Primary")
+    @State private var selectedUser: User? = nil
 
-            Text("Secondary")
-        }
+    var body: some View {
+        Text("Hello, World!")
+            .onTapGesture {
+                selectedUser = User()
+            }
+            .sheet(item: $selectedUser) { user in
+                Text(user.id)
+            }
     }
+}
+
+struct User: Identifiable {
+    var id = "Taylor Swift"
 }
 
 struct ContentView_Previews: PreviewProvider {
