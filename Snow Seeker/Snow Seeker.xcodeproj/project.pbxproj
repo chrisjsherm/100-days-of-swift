@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA81C4D62AB9D48900A99C81 /* resorts.json in Resources */ = {isa = PBXBuildFile; fileRef = AA81C4D52AB9D48900A99C81 /* resorts.json */; };
 		AAA40D782AB4CC1B00714B91 /* Snow_SeekerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA40D772AB4CC1B00714B91 /* Snow_SeekerApp.swift */; };
 		AAA40D7A2AB4CC1B00714B91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA40D792AB4CC1B00714B91 /* ContentView.swift */; };
 		AAA40D7C2AB4CC1D00714B91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA40D7B2AB4CC1D00714B91 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA81C4D52AB9D48900A99C81 /* resorts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = resorts.json; sourceTree = "<group>"; };
 		AAA40D742AB4CC1B00714B91 /* Snow Seeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snow Seeker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA40D772AB4CC1B00714B91 /* Snow_SeekerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snow_SeekerApp.swift; sourceTree = "<group>"; };
 		AAA40D792AB4CC1B00714B91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				AAA40D772AB4CC1B00714B91 /* Snow_SeekerApp.swift */,
 				AAA40D792AB4CC1B00714B91 /* ContentView.swift */,
 				AAA40D7B2AB4CC1D00714B91 /* Assets.xcassets */,
+				AA81C4D52AB9D48900A99C81 /* resorts.json */,
 				AAA40D7D2AB4CC1D00714B91 /* Preview Content */,
 			);
 			path = "Snow Seeker";
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA81C4D62AB9D48900A99C81 /* resorts.json in Resources */,
 				AAA40D7F2AB4CC1D00714B91 /* Preview Assets.xcassets in Resources */,
 				AAA40D7C2AB4CC1D00714B91 /* Assets.xcassets in Resources */,
 			);
