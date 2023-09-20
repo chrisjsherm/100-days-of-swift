@@ -18,6 +18,7 @@
 		AAA40D7A2AB4CC1B00714B91 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA40D792AB4CC1B00714B91 /* ContentView.swift */; };
 		AAA40D7C2AB4CC1D00714B91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA40D7B2AB4CC1D00714B91 /* Assets.xcassets */; };
 		AAA40D7F2AB4CC1D00714B91 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA40D7E2AB4CC1D00714B91 /* Preview Assets.xcassets */; };
+		AABCEE652ABB1EBC00C18732 /* FacilityIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCEE642ABB1EBC00C18732 /* FacilityIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AAA40D792AB4CC1B00714B91 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AAA40D7B2AB4CC1D00714B91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAA40D7E2AB4CC1D00714B91 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AABCEE642ABB1EBC00C18732 /* FacilityIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				AAA40D772AB4CC1B00714B91 /* Snow_SeekerApp.swift */,
 				AAA40D792AB4CC1B00714B91 /* ContentView.swift */,
 				AA81C4DD2AB9D83500A99C81 /* ResortView.swift */,
+				AABCEE642ABB1EBC00C18732 /* FacilityIcon.swift */,
 				AA81C4DB2AB9D71700A99C81 /* WelcomeView.swift */,
 				AA81C4D72AB9D4DA00A99C81 /* ResortModel.swift */,
 				AA81C4D92AB9D52A00A99C81 /* BundleExtension-Decodable.swift */,
@@ -162,6 +165,7 @@
 				AA81C4DC2AB9D71700A99C81 /* WelcomeView.swift in Sources */,
 				AA81C4E02AB9D88900A99C81 /* SkiDetailsView.swift in Sources */,
 				AA81C4E22AB9D92B00A99C81 /* ResortDetailsView.swift in Sources */,
+				AABCEE652ABB1EBC00C18732 /* FacilityIcon.swift in Sources */,
 				AAA40D7A2AB4CC1B00714B91 /* ContentView.swift in Sources */,
 				AA81C4DA2AB9D52A00A99C81 /* BundleExtension-Decodable.swift in Sources */,
 				AA81C4DE2AB9D83500A99C81 /* ResortView.swift in Sources */,
