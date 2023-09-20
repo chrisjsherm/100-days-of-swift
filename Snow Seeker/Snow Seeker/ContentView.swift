@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    let resorts: [Resort] = Bundle.main.decode("resorts.json")
     @State private var searchText = ""
+        
+    let resorts: [Resort] = Bundle.main.decode("resorts.json")
     
     var filteredResorts: [Resort] {
         if searchText.isEmpty {
