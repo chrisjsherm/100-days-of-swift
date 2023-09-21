@@ -11,14 +11,24 @@ class Favorites: ObservableObject {
     // the actual resorts the user has favorited
     private var resorts: Set<String>
 
-    // the key we're using to read/write in UserDefaults
-    private let saveKey = "Favorites"
+    private let DATA_FILE_NAME = "Favorites"
+    private var fileURL: URL {
+        let fileURL = FileManager.documentsDirectory.appendingPathComponent(
+            DATA_FILE_NAME
+        )
+        
+        return fileURL
+    }
 
     init() {
-        // load our saved data
-
-        // still here? Use an empty array
         resorts = []
+
+        if let data = try? Data(contentsOf: fileURL) {
+            if let decoded = try? JSONDecoder().decode(Set<String>.self, from: data) {
+                resorts = decoded
+                return
+            }
+        }
     }
 
     // returns true if our set contains this resort
@@ -41,6 +51,12 @@ class Favorites: ObservableObject {
     }
 
     func save() {
-        // write out our data
+        if let encoded = try? JSONEncoder().encode(resorts) {
+            do {
+                try encoded.write(to: fileURL)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
