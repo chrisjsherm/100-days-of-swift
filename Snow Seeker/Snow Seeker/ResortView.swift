@@ -10,7 +10,8 @@ import SwiftUI
 struct ResortView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.dynamicTypeSize) var typeSize
-    
+    @EnvironmentObject var favorites: Favorites
+     
     @State private var selectedFacility: Facility?
     @State private var showingFacility = false
     
@@ -19,9 +20,20 @@ struct ResortView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Image(decorative: resort.id)
-                    .resizable()
-                    .scaledToFit()
+                ZStack {
+                    Image(decorative: resort.id)
+                        .resizable()
+                        .scaledToFit()
+                    
+                    Text("Credit: \(resort.imageCredit)")
+                        .padding()
+                        .background(
+                            Capsule()
+                                .fill(Color(UIColor.lightGray))
+                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                        
+                }
                 
                 HStack {
                     if sizeClass == .compact && typeSize > .large {
@@ -57,6 +69,16 @@ struct ResortView: View {
                 }
                 .padding(.horizontal)
             }
+            
+            Button(favorites.contains(resort) ? "Remove from Favorites" : "Add to Favorites") {
+                if favorites.contains(resort) {
+                    favorites.remove(resort)
+                } else {
+                    favorites.add(resort)
+                }
+            }
+            .buttonStyle(.borderedProminent)
+            .padding()
         }
         .navigationTitle("\(resort.name), \(resort.country)")
         .navigationBarTitleDisplayMode(.inline)
@@ -70,5 +92,6 @@ struct ResortView: View {
 struct ResortView_Previews: PreviewProvider {
     static var previews: some View {
         ResortView(resort: Resort.example)
+            .environmentObject(Favorites())
     }
 }
